@@ -1,32 +1,72 @@
-* {
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
-  color: black;
-}
-* a {
-  text-decoration: none;
-}
-* button {
-  color: white;
-  background-color: purple;
-}
-* .button--green {
-  color: green;
-  background-color: lightgreen;
-}
+@media all and (max-device-width: 480px) {
+  * {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    color: black;
+    font-weight: bolder;
+  }
+  * a {
+    text-decoration: none;
+  }
 
-header h1 {
-  font-family: "shrikhand", Arial, Helvetica, sans-serif;
-}
-header h1.footer--title__small {
-  font-size: 16px;
-}
+  /****Organiser couleurs $****/
+  button {
+    color: white;
+    background-color: #9356DC;
+    box-shadow: 0 2px 4px 0 grey;
+    border: 0px;
+    border-radius: 22px;
+    height: 44px;
+    width: 220px;
+    justify-content: center;
+    font-weight: normal;
+    font-size: 14px;
+    margin: auto;
+  }
+  button.button--new {
+    color: #2f816d;
+    background-color: #99E2D0;
+    border-radius: 2px;
+    height: 28px;
+    width: 82px;
+    font-weight: 500;
+  }
 
-div span {
-  font-weight: bold;
-  font-size: 24px;
-}
-div p {
-  font-size: 18px;
+  header h1 {
+    font-family: "shrikhand", Arial, Helvetica, sans-serif;
+    margin: auto;
+  }
+  header h1.footer--title__small {
+    font-size: 16px;
+  }
+
+  nav {
+    height: 300px;
+  }
+  nav form {
+    background-color: #999595;
+    border-top: 4px solid grey;
+  }
+  nav .nav--text {
+    background-color: #f3f3f3;
+    height: 80%;
+  }
+
+  div span {
+    font-size: 24px;
+  }
+  div p {
+    font-size: 18px;
+    font-weight: 100;
+  }
+
+  footer.footer--text__color {
+    background-color: grey;
+    color: white;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
