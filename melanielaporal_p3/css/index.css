@@ -63,6 +63,43 @@
     font-weight: 100;
   }
 
+  aside {
+    border: 2px solid #f8be97;
+    background-color: #fcd09f;
+  }
+  aside .filter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+  }
+  aside .filter .filter--text {
+    border: 2px solid #ecd15b;
+    background-color: #ffffb7;
+    border-radius: 24px;
+    width: 320px;
+    height: 100px;
+  }
+  aside .filter .filter--num {
+    border: 2px solid #e97b53;
+    background-color: white;
+    border-radius: 18px;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    left: 12px;
+  }
+
+  main {
+    border: 2px solid darkcyan;
+    background-color: #9ab5e7;
+  }
+  main .place--prev {
+    border: 2px solid #0c0c38;
+    background-color: #b2b2d4;
+    border-radius: 16px;
+  }
+
   footer.footer--text__color {
     background-color: grey;
     color: white;

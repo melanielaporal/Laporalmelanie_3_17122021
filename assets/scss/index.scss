@@ -69,6 +69,46 @@ div {
     }
 }
 
+aside{
+    border: 2px solid rgb(248, 190, 151);
+    background-color: rgb(252, 208, 159);
+
+    .filter{
+        display: flex;
+            flex-direction: row;
+            align-items: center;
+            position: relative;
+
+        .filter--text{
+            border: 2px solid rgb(236, 209, 91);
+            background-color: rgb(255, 255, 183);
+            border-radius: 24px;
+            width: 320px;
+            height: 100px;
+        }
+        .filter--num{
+            border:2px solid rgb(233, 123, 83);
+            background-color: white;
+            border-radius: 18px;
+            width: 24px;
+            height: 24px;
+            position: relative;
+            left: 12px;
+        }
+    }
+      
+} 
+
+
+main{
+    border: 2px solid darkcyan ;
+    background-color: rgb(154, 181, 231);
+    .place--prev{
+        border: 2px solid rgb(12, 12, 56);
+        background-color: rgb(178, 178, 212);
+        border-radius: 16px;
+    }
+}
 
 footer.footer--text__color{
     
