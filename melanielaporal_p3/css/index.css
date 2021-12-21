@@ -15,21 +15,35 @@
 }
 
 /****Organiser couleurs $****/
-header h1 {
-  font-family: "shrikhand", Arial, Helvetica, sans-serif;
-  margin: auto;
-  font-size: 24px;
+header {
+  height: 60px;
+  align-items: center;
+  justify-content: center;
 }
-header h1.footer--title__small {
+header .logo {
+  width: 180px;
+  margin-top: 12px;
+}
+
+form {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+form .research {
+  border: none;
+  background-color: #e4e1e1;
   font-size: 16px;
+  margin-left: 12px;
+  width: 160px;
 }
 
 nav {
   height: 340px;
 }
 nav form {
-  background-color: #999595;
-  border-top: 4px solid grey;
+  background-color: #e4e1e1;
+  border-top: 2px solid #aaa9a9;
   height: 14%;
 }
 nav .nav--text {
@@ -38,40 +52,46 @@ nav .nav--text {
   height: 86%;
 }
 nav .nav--text h2 {
-  margin: 40px 40px 0 40px;
+  font-size: 24px;
+  margin: 50px 40px 0 50px;
+  font-weight: 600;
 }
 nav .nav--text span {
-  margin: 18px 0 0 0;
+  margin: 16px 0 0 0;
+  font-weight: 300;
+  font-size: 18px;
 }
 
 button {
   justify-content: center;
 }
 button.button--leader {
-  background: linear-gradient(-8deg, #9356dc, #fa00b3);
+  background: linear-gradient(-8deg, #9356dc, #ee84dc);
   box-shadow: 0 2px 4px 0 grey;
   border: 0px;
   border-radius: 23px;
-  height: 44px;
-  width: 220px;
+  height: 48px;
+  width: 200px;
   align-self: center;
   margin-top: 32px;
 }
 button.button--leader > p {
   color: #ffffff;
+  font-size: 14px;
 }
 button.button--new {
   color: #2f816d;
   background-color: #99E2D0;
   border-radius: 2px;
   height: 28px;
-  width: 82px;
+  width: 78px;
   font-weight: 500;
+  border-style: none;
 }
 
 /**********************************************************************/
 aside {
-  padding: 12px;
+  padding: 16px;
   height: 420px;
 }
 aside h2 {
@@ -82,18 +102,21 @@ aside h2 {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 18px;
+  margin-top: 22px;
 }
 .filter .filter--text {
   background-color: #f3f3f3;
   border-radius: 24px;
-  box-shadow: 2px 2px 6px silver;
+  box-shadow: 0 8px 12px #e4e1e1;
   width: 100%;
-  height: 76px;
-  margin: 12px;
+  height: 74px;
+  margin: 0 0 0 12px;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+}
+.filter .filter--text i {
+  margin: 0 16px 0 32px;
+  color: #808080;
 }
 .filter .filter--text i:hover {
   color: #9356dc;
@@ -107,7 +130,7 @@ aside h2 {
   width: 24px;
   height: 24px;
   position: absolute;
-  left: 12px;
+  left: 16px;
 }
 .filter .filter--num > p {
   color: #f3f3f3;
@@ -116,7 +139,7 @@ aside h2 {
 
 section {
   background-color: #f3f3f3;
-  padding: 12px;
+  padding: 16px;
 }
 section h2 {
   margin-top: 20px;
@@ -125,10 +148,12 @@ section .place-prev {
   box-shadow: 2px 4px 6px grey;
   border-radius: 16px;
   height: 220px;
+  margin: 8px 0 0 0;
 }
 section .place-prev__img {
   object-fit: cover;
   height: 70%;
+  border-radius: 16px 16px 0 0;
 }
 section .place-prev__heading {
   height: 30%;
@@ -141,9 +166,29 @@ section .place-prev__heading span {
   font-size: 16px;
   font-weight: 300;
 }
+section .button--new__heading, section .button--new {
+  position: relative;
+  bottom: 208px;
+  left: 234px;
+}
 
-footer.footer--text__color {
+.footer-text__color {
+  display: flex;
   background-color: grey;
+  padding: 16px;
+}
+.footer-text__color > .footer-heading {
+  flex-direction: row;
+  align-self: flex-start;
+}
+.footer-text__color .footer-title__small {
+  color: white;
+}
+.footer-text__color .footer-content__logo > i, .footer-text__color .footer-content__logo, .footer-text__color .footer-content {
+  color: white;
+}
+.footer-text__color ul {
+  padding-left: 0;
 }
 
 /*# sourceMappingURL=index.css.map */
