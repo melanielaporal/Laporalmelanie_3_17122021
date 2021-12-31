@@ -29,6 +29,9 @@ header{
         width: 180px;
         margin-top: 12px;
     }
+    h1{
+        font-family: "shrikhand", Arial, Helvetica, sans-serif;
+    }
 }
 
 form{
@@ -85,7 +88,7 @@ button{
         width: 200px;
         align-self: center;
         margin-top: 32px;
-        >p{
+        p{
             color: #ffffff;
             font-size: 14px;
         }
@@ -194,14 +197,13 @@ section{
 
 
 
-.footer-text__color{
+footer {
     display: flex;
+    flex-direction: column;
     background-color: grey;
     padding: 16px;
-    >.footer-heading{
-        flex-direction: row;
-        align-self: flex-start;
-    }
+    
+    
     .footer-title__small{
         color: white;
         
@@ -211,9 +213,20 @@ section{
     }
     ul{
         padding-left: 0;
+        a.footer-content__logo{
+            flex-direction: row;
+        }
     }
 }
 
+.footer-heading{
+    flex-direction: row;
+    align-self: flex-start;
+    img{
+        color: white;
+        font-size: 20px;
+    }
+}
 
 @media all and (min-device-width: 768px){}
 
