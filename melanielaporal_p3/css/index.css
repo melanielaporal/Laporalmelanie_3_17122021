@@ -5,7 +5,6 @@
   margin: 0;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   color: black;
-  font-weight: 500;
 }
 * a {
   text-decoration: none;
@@ -26,6 +25,10 @@ header .logo {
 }
 header h1 {
   font-family: "shrikhand", Arial, Helvetica, sans-serif;
+}
+
+header.top-logo i {
+  color: yellow;
 }
 
 form {
@@ -175,14 +178,47 @@ section .button--new__heading, section .button--new {
   left: 234px;
 }
 
+main section.title {
+  border-radius: 24px 24px 0 0;
+}
+main section.title header {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+main section.title header h1, main section.title header > i {
+  font-size: 26px;
+}
+main section ul {
+  padding: 0;
+  justify-content: space-between;
+}
+main section ul li {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: #e4e1e1 1px 6px 4px;
+  margin-top: 12px;
+  padding: 8px;
+}
+
+li h2, li em {
+  font-weight: 500;
+  font-size: 18px;
+}
+li p {
+  font-weight: 300;
+  font-size: 14px;
+}
+li em {
+  font-style: normal;
+  font-size: 14px;
+}
+
 footer {
   display: flex;
   flex-direction: column;
   background-color: grey;
   padding: 16px;
-}
-footer .footer-title__small {
-  color: white;
 }
 footer .footer-content__logo > i, footer .footer-content__logo, footer .footer-content {
   color: white;
@@ -198,9 +234,8 @@ footer ul a.footer-content__logo {
   flex-direction: row;
   align-self: flex-start;
 }
-.footer-heading img {
+.footer-heading .footer-logo > img {
   color: white;
-  font-size: 20px;
 }
 
 /*# sourceMappingURL=index.css.map */
