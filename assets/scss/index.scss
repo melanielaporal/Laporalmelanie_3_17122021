@@ -14,18 +14,20 @@
     }
    
 }
-/****Organiser couleurs $****/
+/****Shades of grey****/
 $lightgrey:#f3f3f3;
 
 $midgrey: #e4e1e1;
 
-$darkgrey: #aaa9a9;
-
+$darkgrey: #5f5c5c;
+/************************************************************************************/
+/*************************************HEADER*****************************************/
+/************************************************************************************/
 header{
     height: 60px;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    margin-left: 84px;
+    
     .logo{
         width: 160px;
         margin-top: 12px;
@@ -51,13 +53,23 @@ header{
     width: 160px;  
 }
 
+/************************************************************************************/
+.logo-heading__places>i {
+        align-self: flex-start;
+}
 
+
+
+
+/************************************************************************************/
+/*************************************NAVICATION*************************************/
+/************************************************************************************/
 
 nav{
     height: 340px;
     .location{
         background-color: $midgrey;
-        border-top: 2px solid $darkgrey;
+        border-top: 2px solid $midgrey;
         height: 14%;
         flex-direction: row;
         justify-content: center;
@@ -82,6 +94,10 @@ nav{
 
 $purple: #9356dc;
 
+$lightpurple: #9256dc25;
+
+/************************************************************************************/
+/*************************************Buttons***************************************/
 button{
     justify-content: center;
 
@@ -112,11 +128,12 @@ button{
     }
 }
 
-/**********************************************************************/
+/************************************************************************************/
+/*************************************FILTERS****************************************/
+/************************************************************************************/
 
-$lightpurple: #9256dc25;
 aside{
-    padding: 16px;
+    padding: 18px;
     height: 420px;
     h2{
         margin-top: 20px;
@@ -169,18 +186,22 @@ p {
    
 } 
 
+/************************************************************************************/
+/*************************************SECTIONS***************************************/
+/*************************************1st page***************************************/
 
 section{
     background-color: $lightgrey;
-    padding: 16px;
+    padding: 18px;
     h2{
-        margin-top: 20px;
+        margin: 22px 0 0 0;
     }
     .place-prev{
-        box-shadow: 2px 4px 6px grey;
+        box-shadow: 2px 4px 6px $midgrey;
         border-radius: 16px;  
-        height: 220px;
-        margin: 8px 0 0 0;
+        height: 248px;
+        margin: 18px 0 0 0;
+        position: relative;
         
     }
     .place-prev__img{
@@ -197,7 +218,8 @@ section{
         .place-prev__heading {
             height: 100%;
             width: 60%;
-            padding: 4px;
+            padding-left: 14px;
+            justify-content: center;
             h3 {
                 font-size: 18px;
             }
@@ -217,11 +239,15 @@ section{
         }
     }
     .button--new__heading, .button--new{
-        position: relative;
-        bottom: 208px;
-        left: 234px;
+        position: absolute;
+        top: 14px;
+        right: 14px;
     }
 }
+
+/************************************************************************************/
+/*******************************MAIN SECTIONS****************************************/
+/********************************order pages*****************************************/
 
 main {
     background-color: $lightgrey;
@@ -272,12 +298,14 @@ li{
         font-size: 14px;
     }
 }
-
+/************************************************************************************/
+/**************************************FOOTER****************************************/
+/************************************************************************************/
 footer {
     display: flex;
     flex-direction: column;
-    background-color: grey;
-    padding: 16px;
+    background-color: $darkgrey;
+    padding: 18px;
     
     
     .footer-content__logo>i, .footer-content__logo, .footer-content{
