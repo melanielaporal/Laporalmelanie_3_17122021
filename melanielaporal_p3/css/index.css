@@ -16,28 +16,28 @@
 /****Organiser couleurs $****/
 header {
   height: 60px;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  margin-left: 84px;
 }
 header .logo {
-  width: 180px;
+  width: 160px;
   margin-top: 12px;
 }
 header h1 {
   font-family: "shrikhand", Arial, Helvetica, sans-serif;
 }
 
-header.top-logo i {
-  color: yellow;
-}
-
-form {
+.logo-heading__places {
+  display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
 }
-form .research {
-  border: none;
+.logo-heading__places i {
+  align-self: flex-start;
+}
+
+.location-paris {
   background-color: #e4e1e1;
   font-size: 16px;
   margin-left: 12px;
@@ -47,10 +47,13 @@ form .research {
 nav {
   height: 340px;
 }
-nav form {
+nav .location {
   background-color: #e4e1e1;
   border-top: 2px solid #aaa9a9;
   height: 14%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 nav .nav--text {
   background-color: #f3f3f3;
@@ -72,7 +75,7 @@ button {
   justify-content: center;
 }
 button.button--leader {
-  background: linear-gradient(-8deg, #9356dc, #ee84dc);
+  background: linear-gradient(-8deg, #9445c9, #f160d9);
   box-shadow: 0 2px 4px 0 grey;
   border: 0px;
   border-radius: 23px;
@@ -104,6 +107,11 @@ aside h2 {
   margin-top: 20px;
 }
 
+p {
+  font-weight: bolder;
+  font-size: 16px;
+}
+
 .filter {
   display: flex;
   flex-direction: row;
@@ -123,12 +131,13 @@ aside h2 {
 .filter .filter--text i {
   margin: 0 16px 0 32px;
   color: #808080;
+  font-size: 18px;
 }
 .filter .filter--text i:hover {
   color: #9356dc;
 }
 .filter .filter--text:hover {
-  background-color: #a656dc42;
+  background-color: #9256dc25;
 }
 .filter .filter--num {
   background-color: #9356dc;
@@ -161,16 +170,33 @@ section .place-prev__img {
   height: 70%;
   border-radius: 16px 16px 0 0;
 }
-section .place-prev__heading {
+section .place-prev__container {
+  flex-direction: row;
+  justify-content: space-between;
   height: 30%;
+  background-color: white;
+  border-radius: 0 0 16px 16px;
+}
+section .place-prev__container .place-prev__heading {
+  height: 100%;
+  width: 60%;
   padding: 4px;
 }
-section .place-prev__heading h3 {
+section .place-prev__container .place-prev__heading h3 {
   font-size: 18px;
 }
-section .place-prev__heading span {
+section .place-prev__container .place-prev__heading span {
   font-size: 16px;
   font-weight: 300;
+}
+section .place-prev__container .button-fav {
+  width: 30%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+section .place-prev__container .button-fav i {
+  font-size: 24px;
 }
 section .button--new__heading, section .button--new {
   position: relative;
@@ -178,13 +204,22 @@ section .button--new__heading, section .button--new {
   left: 234px;
 }
 
+main {
+  background-color: #f3f3f3;
+}
+main img {
+  height: 260px;
+  object-fit: cover;
+}
 main section.title {
   border-radius: 24px 24px 0 0;
+  padding-top: 12px;
+  position: relative;
+  bottom: 20px;
 }
 main section.title header {
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
 }
 main section.title header h1, main section.title header > i {
   font-size: 26px;
@@ -233,9 +268,12 @@ footer ul a.footer-content__logo {
 .footer-heading {
   flex-direction: row;
   align-self: flex-start;
+  margin: 8px 0 8px 0;
+  height: 30px;
 }
-.footer-heading .footer-logo > img {
+.footer-heading img {
   color: white;
+  width: 112px;
 }
 
 /*# sourceMappingURL=index.css.map */
