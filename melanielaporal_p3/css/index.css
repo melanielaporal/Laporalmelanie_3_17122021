@@ -176,48 +176,52 @@ section {
 section h2 {
   margin: 22px 0 0 0;
 }
-section .place-prev {
+section .places {
+  display: flex;
+  flex-direction: column;
+}
+section .places .place-prev {
   box-shadow: 2px 4px 6px #e4e1e1;
   border-radius: 16px;
   height: 248px;
   margin: 18px 0 0 0;
   position: relative;
 }
-section .place-prev__img {
+section .places .place-prev__img {
   object-fit: cover;
   height: 70%;
   border-radius: 16px 16px 0 0;
 }
-section .place-prev__container {
+section .places .place-prev__container {
   flex-direction: row;
   justify-content: space-between;
   height: 30%;
   background-color: white;
   border-radius: 0 0 16px 16px;
 }
-section .place-prev__container .place-prev__heading {
+section .places .place-prev__container .place-prev__heading {
   height: 100%;
   width: 60%;
   padding-left: 14px;
   justify-content: center;
 }
-section .place-prev__container .place-prev__heading h3 {
+section .places .place-prev__container .place-prev__heading h3 {
   font-size: 18px;
 }
-section .place-prev__container .place-prev__heading span {
+section .places .place-prev__container .place-prev__heading span {
   font-size: 16px;
   font-weight: 300;
 }
-section .place-prev__container .button-fav {
+section .places .place-prev__container .button-fav {
   width: 30%;
   height: 100%;
   justify-content: center;
   align-items: center;
 }
-section .place-prev__container .button-fav i {
+section .places .place-prev__container .button-fav i {
   font-size: 24px;
 }
-section .button--new__heading, section .button--new {
+section .places .button--new__heading, section .places .button--new {
   position: absolute;
   top: 14px;
   right: 14px;
@@ -299,6 +303,82 @@ footer ul a.footer-content__logo {
 .footer-heading img {
   color: white;
   width: 112px;
+}
+
+@media all and (min-device-width: 768px) {
+  * {
+    display: flex;
+    box-sizing: border-box;
+  }
+
+  aside {
+    width: 100%;
+    padding: 24px;
+  }
+  aside .filter {
+    width: 60%;
+    align-self: center;
+  }
+  aside .filter .filter--text {
+    justify-content: space-evenly;
+  }
+  aside .filter .filter--text i {
+    margin: 0;
+  }
+  aside .filter .filter--num {
+    position: relative;
+    left: 142px;
+  }
+
+  section {
+    padding: 24px;
+  }
+  section .places {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  section .place-prev {
+    width: 48%;
+    margin-bottom: 8px;
+  }
+}
+@media all and (min-device-width: 992px) {
+  * {
+    display: flex;
+    box-sizing: border-box;
+  }
+
+  aside {
+    height: 280px;
+  }
+  aside .steps {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  aside .filter {
+    width: 32%;
+  }
+
+  section {
+    background-color: #FFFFFF;
+  }
+  section .places {
+    flex-direction: row;
+    margin-bottom: 32px;
+    justify-content: space-between;
+  }
+  section .places .place-prev {
+    width: 23%;
+    height: 440px;
+  }
+  section .places .place-prev .place-prev__img {
+    height: 80%;
+  }
+  section .places .place-prev .place-prev__container {
+    height: 20%;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
