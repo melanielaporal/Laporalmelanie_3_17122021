@@ -17,41 +17,43 @@
 /****Shades of grey****/
 $lightgrey:#f3f3f3;
 
-$midgrey: #e4e1e1;
+$midgrey: #dddadaa8;
 
-$darkgrey: #5f5c5c;
+$darkgrey: #4e4b4b;
 /************************************************************************************/
 /*************************************HEADER*****************************************/
 /************************************************************************************/
 header{
+    width: 100%;
     height: 60px;
     align-items: center;
     justify-content: center;
-    
-    .logo{
-        width: 160px;
-        margin-top: 12px;
+    .header-link__arrow {
+        width: 40px;
+        align-self: flex-start;
     }
-    h1{
-        font-family: "shrikhand", Arial, Helvetica, sans-serif;
+    .header-link__logo {
+        .logo{
+            width: 160px;
+            
+        }
+        
     }
 }
 .logo-heading__places{
     display: flex;
     flex-direction: row;
     align-items: center;
-    i{
+    a {
+        i{
         align-self: flex-start;
+        }
     }
+    
 }
 
 
-.location-paris{
-    background-color: $midgrey;
-    font-size: 16px ;
-    margin-left: 12px;
-    width: 160px;  
-}
+
 
 /************************************************************************************/
 .logo-heading__places>i {
@@ -65,15 +67,24 @@ header{
 /*************************************NAVICATION*************************************/
 /************************************************************************************/
 
-nav{
+nav {
     height: 340px;
-    .location{
+    .location {
         background-color: $midgrey;
         border-top: 2px solid $midgrey;
         height: 14%;
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        .location-display {
+            flex-direction: row;
+            .location-paris {
+            
+            font-size: 16px ;
+            font-weight: 500;
+            margin-left: 22px;  
+            }
+        }   
     }
     .nav--text{
         background-color: $lightgrey;
@@ -98,11 +109,11 @@ $lightpurple: #9256dc25;
 
 /************************************************************************************/
 /*************************************Buttons***************************************/
-button{
-    justify-content: center;
 
-    &.button--leader{
-        
+    
+.button--leader{
+        justify-content: center;
+        align-items: center;
         background: linear-gradient(-8deg, #9445c9,#f160d9);
         box-shadow: 0 2px 4px 0 grey;
         border: 0px;
@@ -111,33 +122,57 @@ button{
         width: 200px;
         align-self: center;
         margin-top: 32px;
-        p{
-            color: #ffffff;
-            font-size: 14px;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 500;
+        transform: scale(1);
+        transition: transform 200ms;
+        &:hover {
+            transform: scale(1.04);
+            background: linear-gradient(-8deg, #a868d3,#f078dc);
         }
     }
 
-    &.button--new{
+.button--new{
+    justify-content: center;
+    align-items: center;
         color: #2f816d;        
         background-color: #99E2D0;
         border-radius: 2px;
         height: 28px;
         width: 78px;
         font-weight: 500;
-        border-style: none;    
+        border-style: none;   
+        position: absolute;
+            top: 14px;
+            right: 14px; 
+    }
+.button-fav {
+    width: 50px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    transform: scale(1);
+    transition-property: transform;
+    transition-duration: 4000ms;
+    & :hover {
+            background: linear-gradient(-8deg, #9445c9,#f160d9);
+            transform: scale(2);
+        }
+    i {
+        font-size: 24px;
+        border-color: 1px solid black;
+        color: black;
     }
 }
-
 /************************************************************************************/
 /*************************************FILTERS****************************************/
 /************************************************************************************/
 
 aside{
-    padding: 18px;
+    padding: 52px 18px 60px 18px;
     height: 420px;
-    h2{
-        margin-top: 20px;
-    }
+    
 }    
 p {
     font-weight: bolder;
@@ -192,10 +227,8 @@ p {
 
 section{
     background-color: $lightgrey;
-    padding: 18px;
-    h2{
-        margin: 22px 0 0 0;
-    }
+    padding: 52px 18px 60px 18px;
+    
     .places {
         display: flex;
         flex-direction: column;
@@ -223,6 +256,7 @@ section{
                 width: 60%;
                 padding-left: 14px;
                 justify-content: center;
+                overflow: scroll;
                 h3 {
                     font-size: 18px;
                 }
@@ -231,21 +265,10 @@ section{
                     font-weight: 300;
                 }            
             }
-            .button-fav {
-                width: 30%;
-                height: 100%;
-                justify-content: center;
-                align-items: center;
-                i {
-                    font-size: 24px;
-                }
-            }
+
+            
         }
-        .button--new__heading, .button--new{
-            position: absolute;
-            top: 14px;
-            right: 14px;
-        }
+        
     }
 }
 
@@ -260,81 +283,113 @@ main {
         object-fit: cover;
     }
     section.title{
-    border-radius: 24px 24px 0 0;
-    padding-top: 12px;
+    border-radius: 32px 32px 0 0;
+    padding-top: 36px;
     position: relative;
-    bottom: 20px;
-        header{
+    bottom: 28px;
+        .place-name{
             flex-direction: row;
             justify-content: space-between;
-            h1, >i{
+            align-items: baseline;
+            h1 {
+                font-size: 28px;
+                font-family: "Shrikhand", Arial, Helvetica, sans-serif;
+            }
+            /*button fav icon*/
+            i {
                 font-size: 26px;
             }
         }
     }
     section{
+        padding: 0 18px 36px 18px ;
         ul{
             padding: 0;
             justify-content:space-between;
-            li{
-                background-color: #ffffff;
-                border-radius: 16px;
-                box-shadow: $midgrey 1px 6px 4px;
-                margin-top: 12px;
-                padding: 8px;
-            }
         }
     }
 }
 
-li{
-    
-    h2, em{
-        font-weight: 500;     
-        font-size: 18px;    
+.name{
+    flex-direction: row;
+    justify-content: space-between;
+    height: 68px;
+    padding: 12px; 
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: $midgrey 1px 6px 4px;
+    margin-top: 12px;
+    &:hover {
+        background-color:beige; /* realiser l'effet*/
     }
-    p{
-        font-weight: 300;
-        font-size: 14px;
-    }
-    em{
-        font-style: normal;
-        font-size: 14px;
+    .dishes-name {
+        width: 80%;
+        overflow: scroll;
+        h2, em{
+            font-weight: 500;     
+            font-size: 18px;    
+        }
+        p{
+            font-weight: 300;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+    }  
+    .dishes-price { 
+        width: 20%;
+        justify-content: flex-end;
+        align-items: flex-end;    
+        em{
+            font-style: normal;
+            font-size: 14px;
+        }
+    } 
+    .button-cheklist {
+        display: none;
     }
 }
 /************************************************************************************/
 /**************************************FOOTER****************************************/
 /************************************************************************************/
-footer {
+.footer-text__color {
     display: flex;
     flex-direction: column;
     background-color: $darkgrey;
-    padding: 18px;
+    padding: 0 18px 58px 18px;
+    .footer-top {
+        flex-direction: row;
+        align-self: flex-start;
+        margin: 18px 0 18px 0;
+        height: 30px;
+        .footer-logo{
+            color: white;
+            width: 120px;
+        }   
     
-    
-    .footer-content__logo>i, .footer-content__logo, .footer-content{
-        color: white;
     }
     ul{
         padding-left: 0;
         a.footer-content__logo{
             flex-direction: row;
+            align-items: baseline;
             
+        }
+        .footer-content{
+        color: white;
+        margin-bottom: 8px
+        }
+        .footer-content__logo {
+            @extend .footer-content;
+            i {
+                @extend .footer-content;
+                margin-right: 12px;
+                font-size: 14px;
+            }
         }
     }
 }
 
-.footer-heading{
-    flex-direction: row;
-    align-self: flex-start;
-    margin: 8px 0 8px 0;
-    height: 30px;
-    img{
-        color: white;
-        width: 112px;
-    }
-   
-}
+
 
 @media all and (min-device-width: 768px){
     * {
@@ -343,7 +398,7 @@ footer {
     }
     aside {
         width: 100%;
-        padding: 24px;
+        padding: 58px 24px 24px 24px ;
        .filter {
             width: 60%;
             align-self: center;
@@ -353,14 +408,14 @@ footer {
                 }
             }
             .filter--num {
-                position: relative;
-                left: 142px;
+                position: absolute;
+                left: 184px;
             }
         }
     } 
     
     section {
-        padding: 24px;
+        padding: 58px 24px 58px 24px;
         .places { 
             display:flex;
             flex-wrap: wrap;
@@ -374,6 +429,10 @@ footer {
     }
 }
 
+.footer-text__color {
+    justify-content: center;
+}
+
 @media all and (min-device-width: 992px){
     * {
         display: flex;
@@ -381,7 +440,7 @@ footer {
     }
 
     aside {
-        height: 280px;
+        height: 240px;
         .steps {
             flex-direction: row;
             justify-content: space-between;
@@ -391,8 +450,10 @@ footer {
         }
     }
 
-    section {
-        background-color:#FFFFFF;
+    .preview {
+        background-color:$lightpurple;
+        border-radius: 22px;
+        margin: 0 24px 42px 24px;
         .places {
             flex-direction: row;
             margin-bottom: 32px;
@@ -400,6 +461,7 @@ footer {
             .place-prev {
                 width: 23%;
                 height: 440px;
+                box-shadow: 10px 10px 10px $lightpurple;
                 
                 .place-prev__img {
                     height: 80%;

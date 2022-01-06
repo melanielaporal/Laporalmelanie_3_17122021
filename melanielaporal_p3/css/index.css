@@ -18,16 +18,17 @@
 /*************************************HEADER*****************************************/
 /************************************************************************************/
 header {
+  width: 100%;
   height: 60px;
   align-items: center;
   justify-content: center;
 }
-header .logo {
-  width: 160px;
-  margin-top: 12px;
+header .header-link__arrow {
+  width: 40px;
+  align-self: flex-start;
 }
-header h1 {
-  font-family: "shrikhand", Arial, Helvetica, sans-serif;
+header .header-link__logo .logo {
+  width: 160px;
 }
 
 .logo-heading__places {
@@ -35,15 +36,8 @@ header h1 {
   flex-direction: row;
   align-items: center;
 }
-.logo-heading__places i {
+.logo-heading__places a i {
   align-self: flex-start;
-}
-
-.location-paris {
-  background-color: #e4e1e1;
-  font-size: 16px;
-  margin-left: 12px;
-  width: 160px;
 }
 
 /************************************************************************************/
@@ -58,12 +52,20 @@ nav {
   height: 340px;
 }
 nav .location {
-  background-color: #e4e1e1;
-  border-top: 2px solid #e4e1e1;
+  background-color: #dddadaa8;
+  border-top: 2px solid #dddadaa8;
   height: 14%;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+nav .location .location-display {
+  flex-direction: row;
+}
+nav .location .location-display .location-paris {
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 22px;
 }
 nav .nav--text {
   background-color: #f3f3f3;
@@ -83,10 +85,9 @@ nav .nav--text span {
 
 /************************************************************************************/
 /*************************************Buttons***************************************/
-button {
+.button--leader {
   justify-content: center;
-}
-button.button--leader {
+  align-items: center;
   background: linear-gradient(-8deg, #9445c9, #f160d9);
   box-shadow: 0 2px 4px 0 grey;
   border: 0px;
@@ -95,12 +96,20 @@ button.button--leader {
   width: 200px;
   align-self: center;
   margin-top: 32px;
-}
-button.button--leader p {
   color: #ffffff;
   font-size: 14px;
+  font-weight: 500;
+  transform: scale(1);
+  transition: transform 200ms;
 }
-button.button--new {
+.button--leader:hover {
+  transform: scale(1.04);
+  background: linear-gradient(-8deg, #a868d3, #f078dc);
+}
+
+.button--new {
+  justify-content: center;
+  align-items: center;
   color: #2f816d;
   background-color: #99E2D0;
   border-radius: 2px;
@@ -108,17 +117,36 @@ button.button--new {
   width: 78px;
   font-weight: 500;
   border-style: none;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+}
+
+.button-fav {
+  width: 50px;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  transform: scale(1);
+  transition-property: transform;
+  transition-duration: 4000ms;
+}
+.button-fav :hover {
+  background: linear-gradient(-8deg, #9445c9, #f160d9);
+  transform: scale(2);
+}
+.button-fav i {
+  font-size: 24px;
+  border-color: 1px solid black;
+  color: black;
 }
 
 /************************************************************************************/
 /*************************************FILTERS****************************************/
 /************************************************************************************/
 aside {
-  padding: 18px;
+  padding: 52px 18px 60px 18px;
   height: 420px;
-}
-aside h2 {
-  margin-top: 20px;
 }
 
 p {
@@ -135,7 +163,7 @@ p {
 .filter .filter--text {
   background-color: #f3f3f3;
   border-radius: 24px;
-  box-shadow: 0 8px 12px #e4e1e1;
+  box-shadow: 0 8px 12px #dddadaa8;
   width: 100%;
   height: 74px;
   margin: 0 0 0 12px;
@@ -171,17 +199,14 @@ p {
 /*************************************1st page***************************************/
 section {
   background-color: #f3f3f3;
-  padding: 18px;
-}
-section h2 {
-  margin: 22px 0 0 0;
+  padding: 52px 18px 60px 18px;
 }
 section .places {
   display: flex;
   flex-direction: column;
 }
 section .places .place-prev {
-  box-shadow: 2px 4px 6px #e4e1e1;
+  box-shadow: 2px 4px 6px #dddadaa8;
   border-radius: 16px;
   height: 248px;
   margin: 18px 0 0 0;
@@ -204,6 +229,7 @@ section .places .place-prev__container .place-prev__heading {
   width: 60%;
   padding-left: 14px;
   justify-content: center;
+  overflow: scroll;
 }
 section .places .place-prev__container .place-prev__heading h3 {
   font-size: 18px;
@@ -211,20 +237,6 @@ section .places .place-prev__container .place-prev__heading h3 {
 section .places .place-prev__container .place-prev__heading span {
   font-size: 16px;
   font-weight: 300;
-}
-section .places .place-prev__container .button-fav {
-  width: 30%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-}
-section .places .place-prev__container .button-fav i {
-  font-size: 24px;
-}
-section .places .button--new__heading, section .places .button--new {
-  position: absolute;
-  top: 14px;
-  right: 14px;
 }
 
 /************************************************************************************/
@@ -238,71 +250,105 @@ main img {
   object-fit: cover;
 }
 main section.title {
-  border-radius: 24px 24px 0 0;
-  padding-top: 12px;
+  border-radius: 32px 32px 0 0;
+  padding-top: 36px;
   position: relative;
-  bottom: 20px;
+  bottom: 28px;
 }
-main section.title header {
+main section.title .place-name {
   flex-direction: row;
   justify-content: space-between;
+  align-items: baseline;
+  /*button fav icon*/
 }
-main section.title header h1, main section.title header > i {
+main section.title .place-name h1 {
+  font-size: 28px;
+  font-family: "Shrikhand", Arial, Helvetica, sans-serif;
+}
+main section.title .place-name i {
   font-size: 26px;
+}
+main section {
+  padding: 0 18px 36px 18px;
 }
 main section ul {
   padding: 0;
   justify-content: space-between;
 }
-main section ul li {
+
+.name {
+  flex-direction: row;
+  justify-content: space-between;
+  height: 68px;
+  padding: 12px;
   background-color: #ffffff;
   border-radius: 16px;
-  box-shadow: #e4e1e1 1px 6px 4px;
+  box-shadow: #dddadaa8 1px 6px 4px;
   margin-top: 12px;
-  padding: 8px;
 }
-
-li h2, li em {
+.name:hover {
+  background-color: beige;
+  /* realiser l'effet*/
+}
+.name .dishes-name {
+  width: 80%;
+  overflow: scroll;
+}
+.name .dishes-name h2, .name .dishes-name em {
   font-weight: 500;
   font-size: 18px;
 }
-li p {
+.name .dishes-name p {
   font-weight: 300;
   font-size: 14px;
+  margin-top: 4px;
 }
-li em {
+.name .dishes-price {
+  width: 20%;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.name .dishes-price em {
   font-style: normal;
   font-size: 14px;
+}
+.name .button-cheklist {
+  display: none;
 }
 
 /************************************************************************************/
 /**************************************FOOTER****************************************/
 /************************************************************************************/
-footer {
+.footer-text__color {
   display: flex;
   flex-direction: column;
-  background-color: #5f5c5c;
-  padding: 18px;
+  background-color: #4e4b4b;
+  padding: 0 18px 58px 18px;
 }
-footer .footer-content__logo > i, footer .footer-content__logo, footer .footer-content {
-  color: white;
-}
-footer ul {
-  padding-left: 0;
-}
-footer ul a.footer-content__logo {
-  flex-direction: row;
-}
-
-.footer-heading {
+.footer-text__color .footer-top {
   flex-direction: row;
   align-self: flex-start;
-  margin: 8px 0 8px 0;
+  margin: 18px 0 18px 0;
   height: 30px;
 }
-.footer-heading img {
+.footer-text__color .footer-top .footer-logo {
   color: white;
-  width: 112px;
+  width: 120px;
+}
+.footer-text__color ul {
+  padding-left: 0;
+}
+.footer-text__color ul a.footer-content__logo {
+  flex-direction: row;
+  align-items: baseline;
+}
+.footer-text__color ul .footer-content, .footer-text__color ul .footer-content__logo i, .footer-text__color ul .footer-content__logo {
+  color: white;
+  margin-bottom: 8px;
+}
+.footer-text__color ul .footer-content__logo i {
+  margin-right: 12px;
+  font-size: 14px;
 }
 
 @media all and (min-device-width: 768px) {
@@ -313,7 +359,7 @@ footer ul a.footer-content__logo {
 
   aside {
     width: 100%;
-    padding: 24px;
+    padding: 58px 24px 24px 24px;
   }
   aside .filter {
     width: 60%;
@@ -326,12 +372,12 @@ footer ul a.footer-content__logo {
     margin: 0;
   }
   aside .filter .filter--num {
-    position: relative;
-    left: 142px;
+    position: absolute;
+    left: 184px;
   }
 
   section {
-    padding: 24px;
+    padding: 58px 24px 58px 24px;
   }
   section .places {
     display: flex;
@@ -344,6 +390,10 @@ footer ul a.footer-content__logo {
     margin-bottom: 8px;
   }
 }
+.footer-text__color {
+  justify-content: center;
+}
+
 @media all and (min-device-width: 992px) {
   * {
     display: flex;
@@ -351,7 +401,7 @@ footer ul a.footer-content__logo {
   }
 
   aside {
-    height: 280px;
+    height: 240px;
   }
   aside .steps {
     flex-direction: row;
@@ -361,22 +411,25 @@ footer ul a.footer-content__logo {
     width: 32%;
   }
 
-  section {
-    background-color: #FFFFFF;
+  .preview {
+    background-color: #9256dc25;
+    border-radius: 22px;
+    margin: 0 24px 42px 24px;
   }
-  section .places {
+  .preview .places {
     flex-direction: row;
     margin-bottom: 32px;
     justify-content: space-between;
   }
-  section .places .place-prev {
+  .preview .places .place-prev {
     width: 23%;
     height: 440px;
+    box-shadow: 10px 10px 10px #9256dc25;
   }
-  section .places .place-prev .place-prev__img {
+  .preview .places .place-prev .place-prev__img {
     height: 80%;
   }
-  section .places .place-prev .place-prev__container {
+  .preview .places .place-prev .place-prev__container {
     height: 20%;
   }
 }
