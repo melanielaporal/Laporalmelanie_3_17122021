@@ -30,7 +30,10 @@ header{
     justify-content: center;
     .header-link__arrow {
         width: 40px;
-        align-self: flex-start;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 20px;
     }
     .header-link__logo {
         .logo{
@@ -64,7 +67,7 @@ header{
 
 
 /************************************************************************************/
-/*************************************NAVICATION*************************************/
+/*************************************NAVIGATION*************************************/
 /************************************************************************************/
 
 nav {
@@ -95,8 +98,8 @@ nav {
             margin: 50px 40px 0 50px;
             font-weight: 600;        
         }
-        span{
-        margin: 16px 0 0 0 ;
+        h4{
+        margin: 16px 0 42px 0 ;
         font-weight: 300;
         font-size: 18px;
         }
@@ -121,7 +124,6 @@ $lightpurple: #9256dc25;
         height: 48px;
         width: 200px;
         align-self: center;
-        margin-top: 32px;
         color: #ffffff;
         font-size: 14px;
         font-weight: 500;
@@ -155,7 +157,7 @@ $lightpurple: #9256dc25;
     transform: scale(1);
     transition-property: transform;
     transition-duration: 4000ms;
-    & :hover {
+    & :active {
             background: linear-gradient(-8deg, #9445c9,#f160d9);
             transform: scale(2);
         }
@@ -308,45 +310,65 @@ main {
             justify-content:space-between;
         }
     }
+    .order-button {
+        padding-bottom: 80px;
+    }
 }
 
 .name{
     flex-direction: row;
     justify-content: space-between;
-    height: 68px;
-    padding: 12px; 
+    height: 68px; 
     background-color: #ffffff;
     border-radius: 16px;
     box-shadow: $midgrey 1px 6px 4px;
     margin-top: 12px;
-    &:hover {
-        background-color:beige; /* realiser l'effet*/
-    }
+    overflow: hidden;
+    &:hover > .button-cheklist {
+            transform: translate(100px, 0);
+            transform: scaleX(1);
+        }
+    
     .dishes-name {
         width: 80%;
         overflow: scroll;
+        padding: 12px;
         h2, em{
             font-weight: 500;     
-            font-size: 18px;    
+            font-size: 18px; 
+            font-style: normal;   
         }
         p{
             font-weight: 300;
             font-size: 14px;
             margin-top: 4px;
         }
-    }  
+    } 
+    .button-cheklist {
+        width: 68px;
+        height: 100%;
+        transform-origin: right 50% ;
+        transform: scaleX(0);
+        transition: transform 400ms ease-out;
+        background-color: #99E2D0;
+        justify-content: center;
+        align-items: center;
+        color: white;  
+        margin: 0; 
+        i {
+            color: white;
+        }    
+    } 
     .dishes-price { 
         width: 20%;
         justify-content: flex-end;
-        align-items: flex-end;    
+        align-items: flex-end; 
+        padding: 12px;   
         em{
             font-style: normal;
             font-size: 14px;
         }
     } 
-    .button-cheklist {
-        display: none;
-    }
 }
 /************************************************************************************/
 /**************************************FOOTER****************************************/
@@ -355,7 +377,7 @@ main {
     display: flex;
     flex-direction: column;
     background-color: $darkgrey;
-    padding: 0 18px 58px 18px;
+    padding: 0 18px 36px 18px;
     .footer-top {
         flex-direction: row;
         align-self: flex-start;
