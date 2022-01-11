@@ -1,10 +1,10 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   margin: 0;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
-  color: black;
 }
 * a {
   text-decoration: none;
@@ -22,6 +22,7 @@ header {
   height: 60px;
   align-items: center;
   justify-content: center;
+  box-shadow: 0px 1px 4px #000;
 }
 header .header-link__arrow {
   width: 40px;
@@ -29,6 +30,7 @@ header .header-link__arrow {
   top: 20px;
   left: 20px;
   font-size: 20px;
+  color: #000;
 }
 header .header-link__logo .logo {
   width: 160px;
@@ -53,11 +55,11 @@ header .header-link__logo .logo {
 /************************************************************************************/
 nav {
   height: 340px;
+  border-top: 2px solid #dddadaa8;
 }
 nav .location {
   background-color: #dddadaa8;
-  border-top: 2px solid #dddadaa8;
-  height: 14%;
+  height: 16%;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -77,11 +79,11 @@ nav .nav--text {
 }
 nav .nav--text h2 {
   font-size: 24px;
-  margin: 50px 40px 0 50px;
+  margin: 42px 40px 0 50px;
   font-weight: 600;
 }
 nav .nav--text h4 {
-  margin: 16px 0 42px 0;
+  margin: 16px 0 28px 0;
   font-weight: 300;
   font-size: 18px;
 }
@@ -91,7 +93,7 @@ nav .nav--text h4 {
 .button--leader {
   justify-content: center;
   align-items: center;
-  background: linear-gradient(-8deg, #9445c9, #f160d9);
+  background: linear-gradient(-8deg, #9356DC, #FF79DA);
   box-shadow: 0 2px 4px 0 grey;
   border: 0px;
   border-radius: 23px;
@@ -101,12 +103,10 @@ nav .nav--text h4 {
   color: #ffffff;
   font-size: 14px;
   font-weight: 500;
-  transform: scale(1);
   transition: transform 200ms;
 }
 .button--leader:hover {
-  transform: scale(1.04);
-  background: linear-gradient(-8deg, #a868d3, #f078dc);
+  background: linear-gradient(-8deg, #bc71ee, #fa88e7);
 }
 
 .button--new {
@@ -129,18 +129,22 @@ nav .nav--text h4 {
   height: 100%;
   justify-content: center;
   align-items: center;
-  transform: scale(1);
-  transition-property: transform;
-  transition-duration: 4000ms;
-}
-.button-fav :active {
-  background: linear-gradient(-8deg, #9445c9, #f160d9);
-  transform: scale(2);
 }
 .button-fav i {
   font-size: 24px;
-  border-color: 1px solid black;
-  color: black;
+  /*text-shadow: 0 0 2px #000; logo interpreté comme du text d'où text-shadow*/
+  transition: all 800ms ease-in-out;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000000;
+  -webkit-text-fill-color: #ffffff;
+  -webkit-background-clip: text;
+}
+.button-fav i:hover {
+  color: #FF79DA;
+  background: -webkit-linear-gradient(#9c47fc, #FF79DA);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-stroke-width: 0;
 }
 
 /************************************************************************************/
@@ -231,14 +235,19 @@ section .places .place-prev__container .place-prev__heading {
   width: 60%;
   padding-left: 14px;
   justify-content: center;
-  overflow: scroll;
 }
 section .places .place-prev__container .place-prev__heading h3 {
+  color: #000;
   font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 section .places .place-prev__container .place-prev__heading span {
+  color: #000;
   font-size: 16px;
   font-weight: 300;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /************************************************************************************/
@@ -273,6 +282,12 @@ main section.title .place-name i {
 main section {
   padding: 0 18px 36px 18px;
 }
+main section .dishes-border {
+  background-color: #99E2D0;
+  height: 2px;
+  width: 40px;
+  margin-top: 6px;
+}
 main section ul {
   padding: 0;
   justify-content: space-between;
@@ -294,24 +309,10 @@ main .order-button {
 .name:hover > .button-cheklist {
   transform: translate(100px, 0);
   transform: scaleX(1);
-}
-.name .dishes-name {
-  width: 80%;
-  overflow: scroll;
-  padding: 12px;
-}
-.name .dishes-name h2, .name .dishes-name em {
-  font-weight: 500;
-  font-size: 18px;
-  font-style: normal;
-}
-.name .dishes-name p {
-  font-weight: 300;
-  font-size: 14px;
-  margin-top: 4px;
+  width: 68px;
 }
 .name .button-cheklist {
-  width: 68px;
+  width: 0px;
   height: 100%;
   transform-origin: right 50%;
   transform: scaleX(0);
@@ -324,6 +325,24 @@ main .order-button {
 }
 .name .button-cheklist i {
   color: white;
+}
+.name .dishes-name {
+  width: 80%;
+  padding: 12px;
+}
+.name .dishes-name h2, .name .dishes-name em {
+  font-weight: 500;
+  font-size: 18px;
+  font-style: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.name .dishes-name p {
+  font-weight: 300;
+  font-size: 14px;
+  margin-top: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .name .dishes-price {
   width: 20%;
