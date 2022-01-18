@@ -319,12 +319,13 @@ main .order-button {
 .name:active > .button-cheklist {
   transform: translate(100px, 0);
   transform: scaleX(1);
-  width: 80px;
-}
-.name .button-cheklist {
   width: 60px;
   height: 100%;
   overflow: hidden;
+}
+.name .button-cheklist {
+  width: 0px;
+  height: 0%;
   transform-origin: right 50%;
   transform: scaleX(0);
   transition: transform 400ms ease-out;
@@ -338,7 +339,7 @@ main .order-button {
   color: white;
 }
 .name .dishes-name {
-  width: 80%;
+  min-width: 60px;
   padding: 12px;
 }
 .name .dishes-name h2, .name .dishes-name em {
@@ -349,6 +350,7 @@ main .order-button {
   overflow: hidden;
   text-overflow: ellipsis;
   display: inline-block;
+  width: 100%;
 }
 .name .dishes-name p {
   font-weight: 300;
@@ -360,9 +362,9 @@ main .order-button {
   display: inline-block;
 }
 .name .dishes-price {
-  width: 20%;
+  width: 60px;
   justify-content: flex-end;
-  align-items: flex-end;
+  align-self: flex-end;
   padding: 12px;
 }
 .name .dishes-price em {
