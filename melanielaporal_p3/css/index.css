@@ -60,17 +60,18 @@ nav {
 nav .location {
   background-color: #dddadaa8;
   height: 16%;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 nav .location .location-display {
   flex-direction: row;
+  margin-right: 12px;
+  font-size: 18px;
 }
 nav .location .location-display .location-paris {
   font-size: 16px;
   font-weight: 500;
-  margin-left: 22px;
+  margin-left: 18px;
 }
 nav .nav--text {
   background-color: #f3f3f3;
@@ -94,7 +95,7 @@ nav .nav--text h4 {
   justify-content: center;
   align-items: center;
   background: linear-gradient(-8deg, #9356DC, #FF79DA);
-  box-shadow: 0 2px 4px 0 grey;
+  box-shadow: 0 2px 4px grey;
   border: 0px;
   border-radius: 23px;
   height: 48px;
@@ -107,6 +108,7 @@ nav .nav--text h4 {
 }
 .button--leader:hover {
   background: linear-gradient(-8deg, #bc71ee, #fa88e7);
+  box-shadow: 0 4px 8px grey;
 }
 
 .button--new {
@@ -117,6 +119,7 @@ nav .nav--text h4 {
   border-radius: 2px;
   height: 28px;
   width: 78px;
+  font-size: 14px;
   font-weight: 500;
   border-style: none;
   position: absolute;
@@ -124,49 +127,53 @@ nav .nav--text h4 {
   right: 14px;
 }
 
-.button-fav {
+.button-fav, .button-fav__place {
   width: 50px;
   height: 100%;
   justify-content: center;
   align-items: center;
 }
-.button-fav i {
+.button-fav .fas, .button-fav__place .fas {
+  text-decoration: none;
+  color: white;
+  background-clip: text;
+  background-image: #99E2D0;
   font-size: 24px;
   /*text-shadow: 0 0 2px #000; logo interpreté comme du text d'où text-shadow*/
   transition: all 800ms ease-in-out;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #000000;
-  -webkit-text-fill-color: #ffffff;
-  -webkit-background-clip: text;
+  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
 }
-.button-fav i:hover {
-  color: #FF79DA;
-  background: -webkit-linear-gradient(#9c47fc, #FF79DA);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-stroke-width: 0;
+.button-fav .fas:hover, .button-fav__place .fas:hover {
+  text-shadow: none;
+  color: transparent;
+  background-clip: text;
+  background-image: linear-gradient(#9356dc, #bb4995);
+}
+
+.button-fav__place .fas {
+  color: #f3f3f3;
 }
 
 /************************************************************************************/
 /*************************************FILTERS****************************************/
 /************************************************************************************/
-aside {
-  padding: 52px 18px 60px 18px;
-  height: 420px;
-}
-
 p {
   font-weight: bolder;
   font-size: 16px;
 }
 
-.filter {
+aside {
+  width: 100%;
+  padding: 52px 18px 60px 18px;
+  height: 420px;
+}
+aside .filter {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-top: 22px;
 }
-.filter .filter--text {
+aside .filter .filter--text {
   background-color: #f3f3f3;
   border-radius: 24px;
   box-shadow: 0 8px 12px #dddadaa8;
@@ -176,26 +183,26 @@ p {
   flex-direction: row;
   align-items: center;
 }
-.filter .filter--text i {
+aside .filter .filter--text:hover {
+  background-color: #9256dc25;
+}
+aside .filter .filter--text:hover > i {
+  color: #9356dc;
+}
+aside .filter .filter--text i {
   margin: 0 16px 0 32px;
   color: #808080;
   font-size: 18px;
 }
-.filter .filter--text i:hover {
-  color: #9356dc;
-}
-.filter .filter--text:hover {
-  background-color: #9256dc25;
-}
-.filter .filter--num {
+aside .filter .filter--num {
   background-color: #9356dc;
   border-radius: 18px;
   width: 24px;
   height: 24px;
   position: absolute;
-  left: 16px;
+  left: 18px;
 }
-.filter .filter--num > p {
+aside .filter .filter--num > p {
   color: #f3f3f3;
   margin: auto;
 }
@@ -217,6 +224,8 @@ section .places .place-prev {
   height: 248px;
   margin: 18px 0 0 0;
   position: relative;
+  color: transparent;
+  /*button-fav animation*/
 }
 section .places .place-prev__img {
   object-fit: cover;
@@ -273,18 +282,19 @@ main section.title .place-name {
   /*button fav icon*/
 }
 main section.title .place-name h1 {
-  font-size: 28px;
+  font-size: 26px;
   font-family: "Shrikhand", Arial, Helvetica, sans-serif;
 }
 main section.title .place-name i {
   font-size: 26px;
+  margin-right: 12px;
 }
 main section {
   padding: 0 18px 36px 18px;
 }
 main section .dishes-border {
   background-color: #99E2D0;
-  height: 2px;
+  height: 3.2px;
   width: 40px;
   margin-top: 6px;
 }
@@ -306,14 +316,15 @@ main .order-button {
   margin-top: 12px;
   overflow: hidden;
 }
-.name:hover > .button-cheklist {
+.name:active > .button-cheklist {
   transform: translate(100px, 0);
   transform: scaleX(1);
-  width: 68px;
+  width: 80px;
 }
 .name .button-cheklist {
-  width: 0px;
+  width: 60px;
   height: 100%;
+  overflow: hidden;
   transform-origin: right 50%;
   transform: scaleX(0);
   transition: transform 400ms ease-out;
@@ -334,15 +345,19 @@ main .order-button {
   font-weight: 500;
   font-size: 18px;
   font-style: normal;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: inline-block;
 }
 .name .dishes-name p {
   font-weight: 300;
   font-size: 14px;
   margin-top: 4px;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: inline-block;
 }
 .name .dishes-price {
   width: 20%;
@@ -353,6 +368,16 @@ main .order-button {
 .name .dishes-price em {
   font-style: normal;
   font-size: 14px;
+}
+
+.dishes-anim {
+  background-color: red;
+}
+.dishes-anim:hover > .name {
+  background-color: saddlebrown;
+  transform-origin: 50% top;
+  transform: scaleX(0);
+  transition: transform 400ms ease-out;
 }
 
 /************************************************************************************/
@@ -390,33 +415,89 @@ main .order-button {
   font-size: 14px;
 }
 
+.loader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #c4adf0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: -20%;
+  z-index: 1;
+  display: flex;
+}
+.loader .letter {
+  color: #9256dc25;
+  font-family: "Shrikhand", Arial, Helvetica, sans-serif;
+  font-size: 48px;
+  animation: flash 960ms linear infinite;
+}
+
+@keyframes flash {
+  0% {
+    color: #9356dc;
+    text-shadow: 0 0 3px #9356dc;
+  }
+  90% {
+    color: #9256dc25;
+    text-shadow: none;
+  }
+  100% {
+    color: #9356dc;
+    text-shadow: 0 0 5px #9356dc;
+  }
+}
+.letter:nth-child(1) {
+  animation-delay: 0.12s;
+}
+
+.letter:nth-child(2) {
+  animation-delay: 0.24s;
+}
+
+.letter:nth-child(3) {
+  animation-delay: 0.36s;
+}
+
+.letter:nth-child(4) {
+  animation-delay: 0.48s;
+}
+
+.letter:nth-child(5) {
+  animation-delay: 0.6s;
+}
+
+.letter:nth-child(6) {
+  animation-delay: 0.72s;
+}
+
+.letter:nth-child(7) {
+  animation-delay: 0.84s;
+}
+
+.letter:nth-child(8) {
+  animation-delay: 0.96s;
+}
+
+/************************************************************************************/
+/******************************************************************************/
+/**************************************FORMAT**********************************************/
+/*************************************TABLETTE***********************************************/
+/*****************************************************************************/
+/************************************************************************************/
 @media all and (min-device-width: 768px) {
   * {
     display: flex;
     box-sizing: border-box;
   }
 
-  aside {
-    width: 100%;
-    padding: 58px 24px 24px 24px;
-  }
-  aside .filter {
-    width: 60%;
-    align-self: center;
-  }
-  aside .filter .filter--text {
-    justify-content: space-evenly;
-  }
-  aside .filter .filter--text i {
-    margin: 0;
-  }
-  aside .filter .filter--num {
-    position: absolute;
-    left: 184px;
-  }
-
   section {
-    padding: 58px 24px 58px 24px;
+    padding: 58px 24px 38px 24px;
   }
   section .places {
     display: flex;
@@ -429,10 +510,36 @@ main .order-button {
     margin-bottom: 8px;
   }
 }
+aside {
+  padding: 58px 24px 24px 24px;
+  height: 440px;
+}
+aside .filter {
+  width: 100%;
+}
+aside .filter .filter--num {
+  background-color: #9356dc;
+  border-radius: 18px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 22px;
+}
+aside .filter .filter--num > p {
+  color: #f3f3f3;
+  margin: auto;
+}
+
 .footer-text__color {
   justify-content: center;
 }
 
+/************************************************************************************/
+/******************************************************************************/
+/**************************************FORMAT**********************************************/
+/*************************************DESKTOP***********************************************/
+/*****************************************************************************/
+/************************************************************************************/
 @media all and (min-device-width: 992px) {
   * {
     display: flex;
@@ -440,20 +547,14 @@ main .order-button {
   }
 
   aside {
-    height: 240px;
+    width: 52%;
   }
-  aside .steps {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  aside .filter {
-    width: 32%;
+  aside .filter .filter--text {
+    justify-content: space-evenly;
   }
 
   .preview {
     background-color: #9256dc25;
-    border-radius: 22px;
-    margin: 0 24px 42px 24px;
   }
   .preview .places {
     flex-direction: row;
@@ -470,6 +571,60 @@ main .order-button {
   }
   .preview .places .place-prev .place-prev__container {
     height: 20%;
+  }
+
+  .button-fav, .button-fav__place {
+    width: 50px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .button-fav .fas, .button-fav__place .fas {
+    font-size: 24px;
+    /*text-shadow: 0 0 2px #000; logo interpreté comme du text d'où text-shadow*/
+    transition: all 1000ms ease-in-out;
+    stroke-width: 1px;
+    -webkit-text-stroke-color: #000000;
+    -webkit-text-fill-color: #ffffff;
+    -webkit-background-clip: text;
+  }
+  .button-fav .fas:hover, .button-fav__place .fas:hover {
+    color: #FF79DA;
+    background: -webkit-linear-gradient(#9c47fc, #FF79DA);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-stroke-width: 0;
+  }
+
+  .name {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 68px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: #dddadaa8 1px 6px 4px;
+    margin-top: 12px;
+    overflow: hidden;
+  }
+  .name:hover > .button-cheklist {
+    transform: translate(100px, 0);
+    transform: scaleX(1);
+    width: 68px;
+  }
+  .name .button-cheklist {
+    width: 0px;
+    height: 100%;
+    transform-origin: right 50%;
+    transform: scaleX(0);
+    transition: transform 400ms ease-out;
+    background-color: #99E2D0;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin: 0;
+  }
+  .name .button-cheklist i {
+    color: white;
   }
 }
 
