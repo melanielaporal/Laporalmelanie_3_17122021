@@ -132,18 +132,18 @@ nav .nav--text h4 {
   height: 100%;
   justify-content: center;
   align-items: center;
+  isolation: isolate;
 }
 .button-fav .fas, .button-fav__place .fas {
   text-decoration: none;
   color: white;
   background-clip: text;
-  background-image: #99E2D0;
   font-size: 24px;
   /*text-shadow: 0 0 2px #000; logo interpreté comme du text d'où text-shadow*/
-  transition: all 800ms ease-in-out;
+  transition: all 1400ms ease-out;
   text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
 }
-.button-fav .fas:hover, .button-fav__place .fas:hover {
+.button-fav .fas:active, .button-fav__place .fas:active {
   text-shadow: none;
   color: transparent;
   background-clip: text;
@@ -183,10 +183,10 @@ aside .filter .filter--text {
   flex-direction: row;
   align-items: center;
 }
-aside .filter .filter--text:hover {
+aside .filter .filter--text:active {
   background-color: #9256dc25;
 }
-aside .filter .filter--text:hover > i {
+aside .filter .filter--text:active > i {
   color: #9356dc;
 }
 aside .filter .filter--text i {
@@ -248,15 +248,21 @@ section .places .place-prev__container .place-prev__heading {
 section .places .place-prev__container .place-prev__heading h3 {
   color: #000;
   font-size: 18px;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
 }
 section .places .place-prev__container .place-prev__heading span {
   color: #000;
   font-size: 16px;
   font-weight: 300;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
 }
 
 /************************************************************************************/
@@ -302,41 +308,35 @@ main section ul {
   padding: 0;
   justify-content: space-between;
 }
-main .order-button {
+main section ul:hover > .name {
+  transform: translateY(0);
+  opacity: 1;
+}
+main .order-final-step {
   padding-bottom: 80px;
 }
 
 .name {
-  flex-direction: row;
-  justify-content: space-between;
   height: 68px;
+  flex-direction: row;
   background-color: #ffffff;
   border-radius: 16px;
   box-shadow: #dddadaa8 1px 6px 4px;
   margin-top: 12px;
   overflow: hidden;
+  transform: translateY(8px);
+  transition: all 1s ease-in-out;
+  opacity: 0;
+  animation-delay: 1s;
 }
-.name:active > .button-cheklist {
-  transform: translate(100px, 0);
-  transform: scaleX(1);
-  width: 60px;
-  height: 100%;
-  overflow: hidden;
+.name .name:nth-child(1) {
+  animation-delay: 1s;
 }
-.name .button-cheklist {
-  width: 0px;
-  height: 0%;
-  transform-origin: right 50%;
-  transform: scaleX(0);
-  transition: transform 400ms ease-out;
-  background-color: #99E2D0;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  margin: 0;
+.name:active > .dishes-price {
+  transform: translateX(0);
 }
-.name .button-cheklist i {
-  color: white;
+.name:active > .button-checklist {
+  transform: translateX(0);
 }
 .name .dishes-name {
   min-width: 60px;
@@ -361,27 +361,112 @@ main .order-button {
   text-overflow: ellipsis;
   display: inline-block;
 }
+.name .dishes-price, .name .button-checklist {
+  width: 48px;
+  height: 100%;
+  overflow: hidden;
+}
+.name .button-checklist {
+  transform: translateX(50px);
+  transition: transform 700ms ease-in-out;
+  background-color: #99E2D0;
+  transform-origin: right 50%;
+}
 .name .dishes-price {
-  width: 60px;
-  justify-content: flex-end;
-  align-self: flex-end;
-  padding: 12px;
-}
-.name .dishes-price em {
-  font-style: normal;
-  font-size: 14px;
+  transform: translateX(50px);
+  transition: transform 700ms ease-in-out;
+  margin-right: 8px;
+  transform-origin: right 50%;
 }
 
-.dishes-anim {
-  background-color: red;
-}
-.dishes-anim:hover > .name {
-  background-color: saddlebrown;
-  transform-origin: 50% top;
-  transform: scaleX(0);
-  transition: transform 400ms ease-out;
+/*
+.name{
+    transform: scale(1);
+    transform-origin: top;
+    transition: transform 900ms ease-in ;
+    animation: rolling 900ms linear;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 68px; 
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: $midgrey 1px 6px 4px;
+    margin-top: 12px;
+    overflow: hidden;
+
+    &:active > .button-checklist {
+            transform: translate(100px, 0);
+            transform: scaleX(1);
+            width: 60px;
+            height: 100%;
+            overflow: hidden;
+
+        }
+    .button-checklist {
+        width: 0px;
+        height: 0%;
+        transform-origin: right 50% ;
+        transform: scaleX(0);
+        transition: transform 400ms ease-out;
+        background-color: $mint;
+        justify-content: center;
+        align-items: center;
+        color: white;  
+        margin: 0; 
+        i {
+            color: white;
+        }  
+
+    }   
+
+    .dishes-name {
+        min-width: 60px;
+        padding: 12px;
+        h2, em{
+            font-weight: 500;     
+            font-size: 18px; 
+            font-style: normal; 
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: inline-block;
+            width: 100%;
+        }
+        p{
+            font-weight: 300;
+            font-size: 14px;
+            margin-top: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: inline-block;
+        }
+    } 
+
+    .dishes-price { 
+        width: 60px;
+        justify-content: flex-end;
+        align-self: flex-end; 
+        padding: 12px;   
+        em{
+            font-style: normal;
+            font-size: 14px;
+        }
+    } 
 }
 
+
+    .name:nth-child(1) {
+        animation-delay: 0.3 ;
+    }
+    .name:nth-child(2) {
+        animation-delay: 0.58 ;
+    }
+    .name:nth-child(3) {
+        animation-delay: 0.9;
+    }
+
+*/
 /************************************************************************************/
 /**************************************FOOTER****************************************/
 /************************************************************************************/
@@ -417,75 +502,81 @@ main .order-button {
   font-size: 14px;
 }
 
-.loader {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-color: #c4adf0;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: -20%;
-  z-index: 1;
-  display: flex;
+/*
+#loader {
+    position:fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color:  #c4adf0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -20%;
+    z-index: 1;
+    display: flex;
+    transition: all 4s ease-in;
+    &:hover {
+        display: none;
+
+    }   
 }
-.loader .letter {
-  color: #9256dc25;
-  font-family: "Shrikhand", Arial, Helvetica, sans-serif;
-  font-size: 48px;
-  animation: flash 960ms linear infinite;
-}
+
+
+.letter {
+        color: $lightpurple;
+        font-family: "Shrikhand", Arial, Helvetica, sans-serif;
+        font-size: 48px;
+        animation: flash 1200ms infinite;
+        animation-delay: 0,1s;
+    }
 
 @keyframes flash {
-  0% {
-    color: #9356dc;
-    text-shadow: 0 0 3px #9356dc;
-  }
-  90% {
-    color: #9256dc25;
-    text-shadow: none;
-  }
-  100% {
-    color: #9356dc;
-    text-shadow: 0 0 5px #9356dc;
-  }
+    0% {
+        color: $purple;
+        text-shadow: 0 0 5px $purple;
+    }
+    90% {
+        color: $lightpurple;
+        text-shadow: none;
+    }
+    100% {
+        color: $purple;
+        text-shadow: 0 0 5px $purple;
+    }
 }
+
 .letter:nth-child(1) {
-  animation-delay: 0.12s;
+    animation-delay: 0.12s ;
 }
-
 .letter:nth-child(2) {
-  animation-delay: 0.24s;
+    animation-delay: 0.24s ;
 }
-
 .letter:nth-child(3) {
-  animation-delay: 0.36s;
+    animation-delay: 0.36s ;
 }
-
 .letter:nth-child(4) {
-  animation-delay: 0.48s;
+    animation-delay: 0.48s ;
 }
-
 .letter:nth-child(5) {
-  animation-delay: 0.6s;
+    animation-delay: 0.60s ;
 }
-
 .letter:nth-child(6) {
-  animation-delay: 0.72s;
+    animation-delay: 0.72s ;
 }
-
 .letter:nth-child(7) {
-  animation-delay: 0.84s;
+    animation-delay: 0.84s ;
 }
-
 .letter:nth-child(8) {
-  animation-delay: 0.96s;
+    animation-delay: 0.96s ;
 }
 
+*/
 /************************************************************************************/
 /******************************************************************************/
 /**************************************FORMAT**********************************************/
@@ -496,6 +587,16 @@ main .order-button {
   * {
     display: flex;
     box-sizing: border-box;
+  }
+
+  .button-fav, .button-fav__place {
+    isolation: isolate;
+  }
+  .button-fav .fas:active, .button-fav__place .fas:active {
+    text-shadow: none;
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(#9356dc, #bb4995);
   }
 
   section {
@@ -554,6 +655,19 @@ aside .filter .filter--num > p {
   aside .filter .filter--text {
     justify-content: space-evenly;
   }
+  aside .filter .filter--text:hover {
+    background-color: #9256dc25;
+  }
+  aside .filter .filter--text:hover > i {
+    color: #9356dc;
+  }
+
+  .button-fav .fas:hover, .button-fav__place .fas:hover {
+    text-shadow: none;
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(#9356dc, #bb4995);
+  }
 
   .preview {
     background-color: #9256dc25;
@@ -575,29 +689,6 @@ aside .filter .filter--num > p {
     height: 20%;
   }
 
-  .button-fav, .button-fav__place {
-    width: 50px;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-  }
-  .button-fav .fas, .button-fav__place .fas {
-    font-size: 24px;
-    /*text-shadow: 0 0 2px #000; logo interpreté comme du text d'où text-shadow*/
-    transition: all 1000ms ease-in-out;
-    stroke-width: 1px;
-    -webkit-text-stroke-color: #000000;
-    -webkit-text-fill-color: #ffffff;
-    -webkit-background-clip: text;
-  }
-  .button-fav .fas:hover, .button-fav__place .fas:hover {
-    color: #FF79DA;
-    background: -webkit-linear-gradient(#9c47fc, #FF79DA);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    -webkit-text-stroke-width: 0;
-  }
-
   .name {
     flex-direction: row;
     justify-content: space-between;
@@ -608,12 +699,12 @@ aside .filter .filter--num > p {
     margin-top: 12px;
     overflow: hidden;
   }
-  .name:hover > .button-cheklist {
+  .name:hover > .button-checklist {
     transform: translate(100px, 0);
     transform: scaleX(1);
     width: 68px;
   }
-  .name .button-cheklist {
+  .name .button-checklist {
     width: 0px;
     height: 100%;
     transform-origin: right 50%;
@@ -625,7 +716,7 @@ aside .filter .filter--num > p {
     color: white;
     margin: 0;
   }
-  .name .button-cheklist i {
+  .name .button-checklist i {
     color: white;
   }
 }
