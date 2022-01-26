@@ -378,12 +378,9 @@ main {
     transform: translateY(8px);
     transition: all 1s ease-in-out;
     opacity: 0;
-    
-    animation-delay: 1s;
-    .name:nth-child(1){
-        animation-delay: 1s;
-    }
-    &:active > .dishes-price  {
+    animation: slow 1s ;
+    justify-content: space-between;
+    &:active > .button-checklist  {
         transform: translateX(0);
     }
     &:active > .button-checklist {
@@ -391,7 +388,7 @@ main {
         transform: translateX(0);
     }
     .dishes-name {
-        min-width: 60px;
+        min-width: 40px;
         padding: 12px;
         h2, em{
             font-weight: 500;     
@@ -413,12 +410,20 @@ main {
             display: inline-block;
         }
     }
-    .dishes-price, .button-checklist{
-        width: 48px;
-        height: 100%;
-        overflow: hidden;
-    }
 
+    .checklist-anim {
+        width: 48px;
+        flex-direction: row;
+        overflow: hidden;
+        transform: translateX(50px);
+        transition: transform 700ms ease-in-out;
+        transform-origin: right 50% ;
+        .dishes-price, .button-checklist{
+            width: 48px;
+            height: 100%;
+            overflow: hidden;
+        }
+    }
     .button-checklist {
         transform: translateX(50px);
         transition: transform 700ms ease-in-out;
@@ -435,8 +440,27 @@ main {
     }
 }
 
+@keyframes slow {
+    0% {
+        opacity: 0.3;
+    }
+    60% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
-
+.name:nth-child(1){
+    animation-delay: 300ms;
+}
+.name:nth-child(2){
+    animation-delay: 600ms;
+}
+.name:nth-child(3){
+    animation-delay: 900ms;
+}
 
 
 /*
@@ -654,7 +678,7 @@ main {
 /************************************************************************************/
 
 
-@media all and (min-device-width: 768px){
+@media all and (min-width: 768px){
     * {
         display: flex;
         box-sizing: border-box;
@@ -727,7 +751,7 @@ main {
 /************************************************************************************/
 
 
-@media all and (min-device-width: 992px){
+@media all and (min-width: 992px){
     * {
         display: flex;
         box-sizing: border-box;
