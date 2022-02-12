@@ -339,35 +339,37 @@ main {
             i {
                 font-size: 26px;
                 margin-right: 12px;
+                transform-origin: center;
+                transform: rotate(360deg);
             }
         }
     }
+
     section{
         padding: 0 18px 36px 18px ;
-       
         .dishes-border {
                 background-color: $mint;
                 height: 3.2px;
                 width: 40px;
                 margin-top: 6px;
             }
-        
         ul{
             padding: 0;
             justify-content:space-between;
             &:hover > .name {
             transform: translateY(0);  
             opacity: 1;
-            }
-           
-            
+            }   
         }
     }
+
     .order-final-step {
         padding-bottom: 80px;
     }
 }
+/*
 .name {
+    width: 100%;
     height: 68px;
     flex-direction: row;
     background-color: #ffffff;
@@ -378,17 +380,21 @@ main {
     transform: translateY(8px);
     transition: all 1s ease-in-out;
     opacity: 0;
-    animation: slow 1s ;
-    justify-content: space-between;
+    animation: slow 2400ms ease-in reverse;  
+    
     &:active > .button-checklist  {
         transform: translateX(0);
+        &> i{
+            transform: rotate(-360deg);
+        }    
     }
-    &:active > .button-checklist {
+    
+    &:active > .dishes-price {
         
         transform: translateX(0);
     }
     .dishes-name {
-        min-width: 40px;
+        min-width: 40%;
         padding: 12px;
         h2, em{
             font-weight: 500;     
@@ -411,41 +417,50 @@ main {
         }
     }
 
-    .checklist-anim {
-        width: 48px;
-        flex-direction: row;
-        overflow: hidden;
-        transform: translateX(50px);
-        transition: transform 700ms ease-in-out;
-        transform-origin: right 50% ;
-        .dishes-price, .button-checklist{
-            width: 48px;
-            height: 100%;
-            overflow: hidden;
-        }
-    }
+
+
+    
     .button-checklist {
+        width: 48px;
+        height: 100%;
+        overflow: hidden;
         transform: translateX(50px);
         transition: transform 700ms ease-in-out;
         background-color: $mint;
         transform-origin: right 50% ;
+        justify-content: center;
+        align-items: center;
+        margin: 0; 
+        position: absolute;
+        right: 0px;
+        i {
+            color: white;
+            transform: rotate(0deg);
+            transition: transform 400ms ease-in-out;
+        }  
+         
         
     }
-    .dishes-price {
+    .dishes-price { 
+        width: 60px;
+        height: 100%;
+        overflow: hidden;
         transform: translateX(50px);
         transition: transform 700ms ease-in-out;
-        margin-right: 8px;
         transform-origin: right 50% ;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 8px 12px 0;
         
     }
 }
 
 @keyframes slow {
     0% {
-        opacity: 0.3;
+        opacity: 0.2;
     }
-    60% {
-        opacity: 0.6;
+    80% {
+        opacity: 0.7;
     }
     100% {
         opacity: 1;
@@ -454,16 +469,19 @@ main {
 
 .name:nth-child(1){
     animation-delay: 300ms;
+    animation-duration: 2400ms;
 }
 .name:nth-child(2){
     animation-delay: 600ms;
+    animation-duration: 2000ms;
 }
 .name:nth-child(3){
     animation-delay: 900ms;
+    animation-duration: 1600ms;
 }
+*/
 
 
-/*
 .name{
     transform: scale(1);
     transform-origin: top;
@@ -505,6 +523,7 @@ main {
 
     .dishes-name {
         min-width: 60px;
+        width: 90%;
         padding: 12px;
         h2, em{
             font-weight: 500;     
@@ -550,7 +569,7 @@ main {
         animation-delay: 0.9;
     }
 
-*/   
+ 
 
 /************************************************************************************/
 /**************************************FOOTER****************************************/
@@ -809,7 +828,7 @@ main {
 
 
 
-    .name{
+   /* .name{
         flex-direction: row;
         justify-content: space-between;
         height: 68px; 
@@ -839,5 +858,5 @@ main {
                 color: white;
             }    
         }
-    }
+    }*/
 }   
