@@ -159,36 +159,43 @@ $darkmint: #2f816d;
             top: 14px;
             right: 14px; 
     }
-.button-fav, .button-fav__place {
-    width: 50px;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    isolation: isolate;
-    
-    .fas {
-        text-decoration: none;
-        color: white;
-        background-clip: text;
-        font-size: 24px;
-        /*text-shadow: 0 0 2px #000; logo interpreté comme du text d'où text-shadow*/
-        transition: all 1400ms ease-out;
-        text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
-        &:active {
+    .button-fav, .button-fav__place {
+        isolation: isolate;
+        .fas { 
+            &:active {
             text-shadow: none; 
             color: transparent;
             background-clip: text;
             background-image: linear-gradient($purple, rgb(187, 73, 149));
             }    
+        }    
+        
+    }  
+    .button-fav, .button-fav__place {
+    width: 50px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    
+    .far {
+        color: black;
+        text-decoration: none;
+        font-size: 24px;
+        background: transparent;
+        transition: all 1800ms ease-out;
+        /*text-shadow: 0 0 2px #000;  logo interpreté comme du text d'où text-shadow*/
+        /*text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;*/
+        &:active {
+            text-shadow: none; 
+            color: transparent;
+            background: linear-gradient($purple, pink);
+            background-clip: border-box;
+            }    
     }    
     
 }
 
-.button-fav__place{
-    .fas{
-    color: $lightgrey;
-    }
-}
+
 /************************************************************************************/
 /*************************************FILTERS****************************************/
 /************************************************************************************/
@@ -709,18 +716,7 @@ main {
         box-sizing: border-box;
     }
 
-    .button-fav, .button-fav__place {
-        isolation: isolate;
-        .fas { 
-            &:active {
-            text-shadow: none; 
-            color: transparent;
-            background-clip: text;
-            background-image: linear-gradient($purple, rgb(187, 73, 149));
-            }    
-        }    
-        
-    }  
+
      
     section {
         padding: 58px 24px 38px 24px;
