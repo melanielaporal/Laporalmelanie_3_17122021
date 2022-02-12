@@ -298,6 +298,7 @@ main section.title .place-name i {
   transform: rotate(360deg);
 }
 main section {
+  width: 100%;
   padding: 0 18px 36px 18px;
 }
 main section .dishes-border {
@@ -452,6 +453,9 @@ main .order-final-step {
   height: 100%;
   overflow: hidden;
 }
+.name:active > .button-checklist > i {
+  transform: rotate(0deg);
+}
 .name .button-checklist {
   width: 0px;
   height: 0%;
@@ -466,6 +470,8 @@ main .order-final-step {
 }
 .name .button-checklist i {
   color: white;
+  transform: rotate(360deg);
+  transition: transform 400ms ease-in-out;
 }
 .name .dishes-name {
   min-width: 60px;
@@ -492,14 +498,14 @@ main .order-final-step {
   display: inline-block;
 }
 .name .dishes-price {
-  width: 60px;
-  justify-content: flex-end;
+  width: 10%;
   align-self: flex-end;
   padding: 12px;
 }
 .name .dishes-price em {
   font-style: normal;
   font-size: 14px;
+  align-self: flex-end;
 }
 
 .name:nth-child(1) {

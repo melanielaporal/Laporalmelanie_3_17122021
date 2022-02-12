@@ -346,6 +346,7 @@ main {
     }
 
     section{
+        width: 100%;
         padding: 0 18px 36px 18px ;
         .dishes-border {
                 background-color: $mint;
@@ -502,6 +503,9 @@ main {
             width: 60px;
             height: 100%;
             overflow: hidden;
+            &> i{
+                transform: rotate(0deg);
+            }
            
         }
     .button-checklist {
@@ -517,6 +521,8 @@ main {
         margin: 0; 
         i {
             color: white;
+            transform: rotate(360deg);
+            transition: transform 400ms ease-in-out;
         }  
          
     }   
@@ -547,13 +553,13 @@ main {
     } 
 
     .dishes-price { 
-        width: 60px;
-        justify-content: flex-end;
-        align-self: flex-end; 
-        padding: 12px;   
+        width: 10%;
+        align-self: flex-end;
+        padding: 12px;
         em{
             font-style: normal;
             font-size: 14px;
+            align-self: flex-end;
         }
     } 
 }
@@ -731,10 +737,6 @@ main {
     }
 }
 
-
-
-
-
     aside {
         padding: 58px 24px 24px 24px ;
         height: 440px;
@@ -755,8 +757,7 @@ main {
             }   
         }
         
-
-
+   
 .footer-text__color {
     justify-content: center;
 }
@@ -825,7 +826,7 @@ main {
         }
     }
 
-
+   
 
 
    /* .name{
