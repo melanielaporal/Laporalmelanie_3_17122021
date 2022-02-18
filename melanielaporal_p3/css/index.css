@@ -144,11 +144,20 @@ nav .nav--text h4 {
   justify-content: center;
   align-items: center;
 }
-.button-fav:hover .far, .button-fav__place:hover .far {
+.button-fav:hover .heart-empty, .button-fav__place:hover .heart-empty {
   display: none;
 }
 .button-fav:hover .heart-full, .button-fav__place:hover .heart-full {
   display: block;
+}
+
+.heart-full {
+  display: none;
+  transition: color 2800ms;
+  color: white;
+}
+.heart-full:hover {
+  color: #9356dc;
 }
 
 /*.far {
@@ -166,10 +175,6 @@ transition: all 1800ms ease-out;
         background-clip: border-box;
         }    
 }*/
-.heart-full {
-  display: none;
-}
-
 /************************************************************************************/
 /*************************************FILTERS****************************************/
 /************************************************************************************/
@@ -573,10 +578,12 @@ main .order-final-step {
 
 #loader {
   position: fixed;
-  width: 100%;
+  z-index: 1000;
+  top: 0px;
+  left: 0px;
   height: 100%;
-  top: 0;
-  left: 0;
+  width: 100%;
+  cursor: wait;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -586,11 +593,17 @@ main .order-final-step {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: -20%;
-  z-index: 1;
   display: flex;
-  transition: all 4s ease-in;
+  animation: loader both;
+  animation-delay: 100ms;
 }
 
+@keyframes loader {
+  100% {
+    z-index: -10;
+    opacity: 0;
+  }
+}
 .letter {
   color: #9256dc25;
   font-family: "Shrikhand", Arial, Helvetica, sans-serif;
@@ -707,10 +720,8 @@ aside .filter .filter--num > p {
     box-sizing: border-box;
   }
 
-  aside {
-    width: 52%;
-  }
   aside .filter .filter--text {
+    width: 70%;
     justify-content: space-evenly;
   }
   aside .filter .filter--text:hover {
@@ -719,12 +730,17 @@ aside .filter .filter--num > p {
   aside .filter .filter--text:hover > i {
     color: #9356dc;
   }
+  aside .filter .filter--num {
+    display: none;
+  }
 
-  .button-fav .fas:hover, .button-fav__place .fas:hover {
-    text-shadow: none;
-    color: transparent;
-    background-clip: text;
-    background-image: linear-gradient(#9356dc, #bb4995);
+  aside {
+    width: 100%;
+    height: 280px;
+  }
+  aside .steps {
+    width: 100%;
+    flex-direction: row;
   }
 
   .preview {
@@ -746,38 +762,6 @@ aside .filter .filter--num > p {
   .preview .places .place-prev .place-prev__container {
     height: 20%;
   }
-
-  /* .name{
-       flex-direction: row;
-       justify-content: space-between;
-       height: 68px; 
-       background-color: #ffffff;
-       border-radius: 16px;
-       box-shadow: $midgrey 1px 6px 4px;
-       margin-top: 12px;
-       overflow: hidden;
-       &:hover > .button-checklist {
-               transform: translate(100px, 0);
-               transform: scaleX(1);
-               width: 68px;
-
-           }
-       .button-checklist {
-           width: 0px;
-           height: 100%;
-           transform-origin: right 50% ;
-           transform: scaleX(0);
-           transition: transform 400ms ease-out;
-           background-color: #99E2D0;
-           justify-content: center;
-           align-items: center;
-           color: white;  
-           margin: 0; 
-           i {
-               color: white;
-           }    
-       }
-   }*/
 }
 
 /*# sourceMappingURL=index.css.map */
