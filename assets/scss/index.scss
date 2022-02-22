@@ -177,11 +177,12 @@ $darkmint: #2f816d;
     align-items: center;
         &:hover .heart-empty  {
             display: none;
+            
         }
         &:hover .heart-full {
             display:block;
             
-        }
+        } /*adapter :hover*/
 
 }
 .heart-empty {
@@ -190,7 +191,7 @@ $darkmint: #2f816d;
 }
 .heart-full {
     display: none;
-    transition: color 1800ms ease-in;
+    transition: color 1200ms ease-in;
     color: transparent;
     font-size: 26px;
     &:hover {
@@ -210,24 +211,38 @@ p {
     font-size: 16px;
 }
 
+/*
+aside {
+    .steps {
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}*/
 aside {
     width: 100%;
     padding: 52px 18px 60px 18px;
-    height: 420px;        
+    height: 420px;   
+    flex-direction: column;     
     .filter{
         display: flex;
         flex-direction: row;
         align-items: center;
         margin-top: 22px;
+        position: relative;
+        
         .filter--text{
             background-color: $lightgrey;
             border-radius: 24px;
             box-shadow: 0 8px 12px $midgrey;
-            width: 100%;
+            width: 680px;
             height: 74px;
-            margin:  0 0 0 12px;
+            margin:  auto ;
             flex-direction: row;
             align-items: center;
+            justify-content: flex-start;
+            position: relative;
+            z-index: 1;
             &:active {
                 background-color: $lightpurple;
             }
@@ -235,7 +250,7 @@ aside {
                 color: $purple;
             }  
             i{
-                margin: 0 16px 0 32px;
+                margin: 12%;
                 color: #808080;
                 font-size: 18px;
             }
@@ -248,7 +263,8 @@ aside {
             width: 24px;
             height: 24px;
             position: absolute;
-            left: 18px;
+            z-index: 2;
+            left: -2%;
             >p{
             color: $lightgrey;
             margin: auto;
@@ -257,6 +273,7 @@ aside {
     
     } 
 }
+
 
 /************************************************************************************/
 /*************************************SECTIONS***************************************/
@@ -392,7 +409,7 @@ main {
     transform: translateY(8px);
     transition: all 1s ease-in-out;
     opacity: 0;
-    animation: slow 2400ms ease-in reverse;  
+    animation: slow 2400ms ease-in;  
     
     &:active > .button-checklist  {
         transform: translateX(0);
@@ -477,22 +494,31 @@ main {
     100% {
         opacity: 1;
     }
-}
+}*/
 
 .name:nth-child(1){
-    animation-delay: 300ms;
-    animation-duration: 2400ms;
+    animation-delay: 200ms;
+    
 }
 .name:nth-child(2){
-    animation-delay: 600ms;
-    animation-duration: 2000ms;
+    animation-delay: 400ms;
 }
 .name:nth-child(3){
-    animation-delay: 900ms;
-    animation-duration: 1600ms;
+    animation-delay: 600ms;
 }
-*/
 
+
+@keyframes slow {
+    0% {
+        opacity: 0.2;
+    }
+    80% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 .name{
     transform: scale(1);
@@ -507,6 +533,9 @@ main {
     box-shadow: $midgrey 1px 6px 4px;
     margin-top: 12px;
     overflow: hidden;
+    animation: slow 300ms;
+    animation-fill-mode: both;
+
     &:active > .button-checklist {
             transform: translate(100px, 0);
             transform: scaleX(1);
@@ -732,9 +761,10 @@ main {
     }
 }
 
+/*
     aside {
          .filter {
-            width: 30%;
+
             .filter--num {       
                 display: none; 
             }
@@ -752,7 +782,7 @@ main {
             flex-direction: row;
             justify-content: space-around;
         }
-    }    
+    }  */  
 
 .footer-text__color {
     justify-content: center;
@@ -773,7 +803,7 @@ main {
         box-sizing: border-box;
     }
 
-    aside {
+ /*   aside {
         .filter {
             .filter--text {
                 width: 70%;
@@ -798,7 +828,7 @@ main {
             width: 100%;
             flex-direction: row;
         }
-    }
+    } */
  
   
     .preview {

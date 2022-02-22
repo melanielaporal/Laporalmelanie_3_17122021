@@ -142,6 +142,7 @@ nav .nav--text h4 {
   height: 100%;
   justify-content: center;
   align-items: center;
+  /*adapter :hover*/
 }
 .button-fav__place:hover .heart-empty {
   display: none;
@@ -157,7 +158,7 @@ nav .nav--text h4 {
 
 .heart-full {
   display: none;
-  transition: color 1800ms ease-in;
+  transition: color 1200ms ease-in;
   color: transparent;
   font-size: 26px;
 }
@@ -173,26 +174,39 @@ p {
   font-size: 16px;
 }
 
+/*
+aside {
+    .steps {
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}*/
 aside {
   width: 100%;
   padding: 52px 18px 60px 18px;
   height: 420px;
+  flex-direction: column;
 }
 aside .filter {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-top: 22px;
+  position: relative;
 }
 aside .filter .filter--text {
   background-color: #f3f3f3;
   border-radius: 24px;
   box-shadow: 0 8px 12px #dddadaa8;
-  width: 100%;
+  width: 680px;
   height: 74px;
-  margin: 0 0 0 12px;
+  margin: auto;
   flex-direction: row;
   align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  z-index: 1;
 }
 aside .filter .filter--text:active {
   background-color: #9256dc25;
@@ -201,7 +215,7 @@ aside .filter .filter--text:active > i {
   color: #9356dc;
 }
 aside .filter .filter--text i {
-  margin: 0 16px 0 32px;
+  margin: 12%;
   color: #808080;
   font-size: 18px;
 }
@@ -211,7 +225,8 @@ aside .filter .filter--num {
   width: 24px;
   height: 24px;
   position: absolute;
-  left: 18px;
+  z-index: 2;
+  left: -2%;
 }
 aside .filter .filter--num > p {
   color: #f3f3f3;
@@ -343,7 +358,7 @@ main .order-final-step {
     transform: translateY(8px);
     transition: all 1s ease-in-out;
     opacity: 0;
-    animation: slow 2400ms ease-in reverse;  
+    animation: slow 2400ms ease-in;  
 
     &:active > .button-checklist  {
         transform: translateX(0);
@@ -428,21 +443,30 @@ main .order-final-step {
     100% {
         opacity: 1;
     }
+}*/
+.name:nth-child(1) {
+  animation-delay: 200ms;
 }
 
-.name:nth-child(1){
-    animation-delay: 300ms;
-    animation-duration: 2400ms;
+.name:nth-child(2) {
+  animation-delay: 400ms;
 }
-.name:nth-child(2){
-    animation-delay: 600ms;
-    animation-duration: 2000ms;
+
+.name:nth-child(3) {
+  animation-delay: 600ms;
 }
-.name:nth-child(3){
-    animation-delay: 900ms;
-    animation-duration: 1600ms;
+
+@keyframes slow {
+  0% {
+    opacity: 0.2;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-*/
 .name {
   transform: scale(1);
   transform-origin: top;
@@ -456,6 +480,8 @@ main .order-final-step {
   box-shadow: #dddadaa8 1px 6px 4px;
   margin-top: 12px;
   overflow: hidden;
+  animation: slow 300ms;
+  animation-fill-mode: both;
 }
 .name:active > .button-checklist {
   transform: translate(100px, 0);
@@ -663,27 +689,28 @@ main .order-final-step {
     margin-bottom: 8px;
   }
 }
-aside .filter {
-  width: 30%;
-}
-aside .filter .filter--num {
-  display: none;
-}
-aside .filter .filter--text {
-  font-weight: lighter;
-  font-size: 12px;
-}
+/*
+    aside {
+         .filter {
 
-aside {
-  width: 100%;
-  height: 280px;
-}
-aside .steps {
-  width: 100%;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
+            .filter--num {       
+                display: none; 
+            }
+            .filter--text {
+                font-weight: lighter;
+                font-size: 12px;
+            }
+        }   
+    }
+    aside {
+        width: 100%;
+        height: 280px;
+        .steps {
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    }  */
 .footer-text__color {
   justify-content: center;
 }
@@ -700,29 +727,32 @@ aside .steps {
     box-sizing: border-box;
   }
 
-  aside .filter .filter--text {
-    width: 70%;
-    justify-content: space-evenly;
-  }
-  aside .filter .filter--text:hover {
-    background-color: #9256dc25;
-  }
-  aside .filter .filter--text:hover > i {
-    color: #9356dc;
-  }
-  aside .filter .filter--num {
-    display: none;
-  }
+  /*   aside {
+         .filter {
+             .filter--text {
+                 width: 70%;
+                 justify-content: space-evenly;
+                 &:hover {
+                 background-color: $lightpurple;
+                 }
+                 &:hover >i { 
+                     color: $purple;
+                 } 
+             }
+             .filter--num {
+                 display: none;
+             }
+         }
+     }
 
-  aside {
-    width: 100%;
-    height: 280px;
-  }
-  aside .steps {
-    width: 100%;
-    flex-direction: row;
-  }
-
+     aside {
+         width: 100%;
+         height: 280px;
+         .steps {
+             width: 100%;
+             flex-direction: row;
+         }
+     } */
   .preview {
     background-color: #9256dc25;
   }
