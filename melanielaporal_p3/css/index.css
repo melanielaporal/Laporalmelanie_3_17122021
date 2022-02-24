@@ -146,7 +146,7 @@ nav .nav--text h4 {
 
 .heart-full {
   display: none;
-  transition: color 1200ms ease-in;
+  transition: color 300ms ease-in;
   color: transparent;
   font-size: 26px;
 }
@@ -335,6 +335,10 @@ main .order-final-step {
 
 .name:nth-child(3) {
   animation-delay: 600ms;
+}
+
+.name:nth-child(4) {
+  animation-delay: 800ms;
 }
 
 @keyframes slow {
