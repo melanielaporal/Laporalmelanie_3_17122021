@@ -60,14 +60,9 @@ header{
 }
 
 
-
-
-/************************************************************************************/
 .logo-heading__places>i {
         align-self: flex-start;
 }
-
-
 
 
 /************************************************************************************/
@@ -159,17 +154,7 @@ $darkmint: #2f816d;
             top: 14px;
             right: 14px; 
     }
-   /* .button-fav, .button-fav__place {
-        .fas { 
-            &:active {
-            text-shadow: none; 
-            color: transparent;
-            background-clip: text;
-            background-image: linear-gradient($purple, rgb(187, 73, 149));
-            }    
-          
-        
-    }}  */  
+    
     .button-fav__place {
     width: 50px;
     height: 100%;
@@ -211,14 +196,7 @@ p {
     font-size: 16px;
 }
 
-/*
-aside {
-    .steps {
-        width: 100%;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-}*/
+
 aside {
     width: 100%;
     padding: 52px 18px 60px 18px;
@@ -235,7 +213,7 @@ aside {
             background-color: $lightgrey;
             border-radius: 24px;
             box-shadow: 0 8px 12px $midgrey;
-            width: 680px;
+            width: 480px;
             height: 74px;
             margin:  auto ;
             flex-direction: row;
@@ -396,105 +374,7 @@ main {
         padding-bottom: 80px;
     }
 }
-/*
-.name {
-    width: 100%;
-    height: 68px;
-    flex-direction: row;
-    background-color: #ffffff;
-    border-radius: 16px;
-    box-shadow: $midgrey 1px 6px 4px;
-    margin-top: 12px;
-    overflow: hidden;
-    transform: translateY(8px);
-    transition: all 1s ease-in-out;
-    opacity: 0;
-    animation: slow 2400ms ease-in;  
-    
-    &:active > .button-checklist  {
-        transform: translateX(0);
-        &> i{
-            transform: rotate(-360deg);
-        }    
-    }
-    
-    &:active > .dishes-price {
-        
-        transform: translateX(0);
-    }
-    .dishes-name {
-        min-width: 40%;
-        padding: 12px;
-        h2, em{
-            font-weight: 500;     
-            font-size: 18px; 
-            font-style: normal; 
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: inline-block;
-            width: 100%;
-        }
-        p{
-            font-weight: 300;
-            font-size: 14px;
-            margin-top: 4px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: inline-block;
-        }
-    }
 
-
-
-    
-    .button-checklist {
-        width: 48px;
-        height: 100%;
-        overflow: hidden;
-        transform: translateX(50px);
-        transition: transform 700ms ease-in-out;
-        background-color: $mint;
-        transform-origin: right 50% ;
-        justify-content: center;
-        align-items: center;
-        margin: 0; 
-        position: absolute;
-        right: 0px;
-        i {
-            color: white;
-            transform: rotate(0deg);
-            transition: transform 400ms ease-in-out;
-        }  
-         
-        
-    }
-    .dishes-price { 
-        width: 60px;
-        height: 100%;
-        overflow: hidden;
-        transform: translateX(50px);
-        transition: transform 700ms ease-in-out;
-        transform-origin: right 50% ;
-        align-items: center;
-        justify-content: flex-end;
-        padding: 0 8px 12px 0;
-        
-    }
-}
-
-@keyframes slow {
-    0% {
-        opacity: 0.2;
-    }
-    80% {
-        opacity: 0.7;
-    }
-    100% {
-        opacity: 1;
-    }
-}*/
 
 .name:nth-child(1){
     animation-delay: 200ms;
@@ -683,7 +563,7 @@ main {
         font-family: "Shrikhand", Arial, Helvetica, sans-serif;
         font-size: 48px;
         animation: flash 1200ms infinite;
-        animation-delay: 0,1s;
+        animation-delay: 100ms;
     }
 
 @keyframes flash {
@@ -761,29 +641,6 @@ main {
     }
 }
 
-/*
-    aside {
-         .filter {
-
-            .filter--num {       
-                display: none; 
-            }
-            .filter--text {
-                font-weight: lighter;
-                font-size: 12px;
-            }
-        }   
-    }
-    aside {
-        width: 100%;
-        height: 280px;
-        .steps {
-            width: 100%;
-            flex-direction: row;
-            justify-content: space-around;
-        }
-    }  */  
-
 .footer-text__color {
     justify-content: center;
 }
@@ -803,33 +660,7 @@ main {
         box-sizing: border-box;
     }
 
- /*   aside {
-        .filter {
-            .filter--text {
-                width: 70%;
-                justify-content: space-evenly;
-                &:hover {
-                background-color: $lightpurple;
-                }
-                &:hover >i { 
-                    color: $purple;
-                } 
-            }
-            .filter--num {
-                display: none;
-            }
-        }
-    }
 
-    aside {
-        width: 100%;
-        height: 280px;
-        .steps {
-            width: 100%;
-            flex-direction: row;
-        }
-    } */
- 
   
     .preview {
         background-color:$lightpurple;
