@@ -307,12 +307,6 @@ main section {
   width: 100%;
   padding: 0 18px 36px 18px;
 }
-main section .dishes-border {
-  background-color: #99E2D0;
-  height: 3.2px;
-  width: 40px;
-  margin-top: 6px;
-}
 main section ul {
   padding: 0;
   justify-content: space-between;
@@ -320,6 +314,18 @@ main section ul {
 main section ul:hover > .name {
   transform: translateY(0);
   opacity: 1;
+}
+main .dishes {
+  position: relative;
+}
+main .dishes::after {
+  content: " ";
+  background-color: #99E2D0;
+  height: 3.2px;
+  width: 40px;
+  margin-top: 6px;
+  position: absolute;
+  top: 16px;
 }
 main .order-final-step {
   padding-bottom: 80px;
