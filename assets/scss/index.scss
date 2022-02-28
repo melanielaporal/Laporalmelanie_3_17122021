@@ -412,7 +412,7 @@ main {
 .name{
     transform: scale(1);
     transform-origin: top;
-    transition: transform 900ms ease-in ;
+    transition: transform 1200ms ease-in ;
     animation: rolling 900ms linear;
     flex-direction: row;
     justify-content: space-between;
@@ -425,7 +425,7 @@ main {
     animation: slow 300ms;
     animation-fill-mode: both;
 
-    &:active > .button-checklist {
+    &:hover > .button-checklist {
             transform: translate(100px, 0);
             transform: scaleX(1);
             width: 60px;

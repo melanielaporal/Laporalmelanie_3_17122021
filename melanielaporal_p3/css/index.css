@@ -361,7 +361,7 @@ main .order-final-step {
 .name {
   transform: scale(1);
   transform-origin: top;
-  transition: transform 900ms ease-in;
+  transition: transform 1200ms ease-in;
   animation: rolling 900ms linear;
   flex-direction: row;
   justify-content: space-between;
@@ -374,14 +374,14 @@ main .order-final-step {
   animation: slow 300ms;
   animation-fill-mode: both;
 }
-.name:active > .button-checklist {
+.name:hover > .button-checklist {
   transform: translate(100px, 0);
   transform: scaleX(1);
   width: 60px;
   height: 100%;
   overflow: hidden;
 }
-.name:active > .button-checklist > i {
+.name:hover > .button-checklist > i {
   transform: rotate(0deg);
 }
 .name .button-checklist {
